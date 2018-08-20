@@ -71,5 +71,7 @@ window.onload = function() {
 		changeLanguage();
 	};
 
+	// console.log(getEssence('.number'));
+
 };
 
