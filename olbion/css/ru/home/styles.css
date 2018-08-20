@@ -6,82 +6,31 @@
   html {
     font-size: 50%; } }
 
-@media (max-width: 1374px) {
+@media (max-width: 1529px) {
   .header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    width: 90%; } }
+    width: 80%; } }
 
-@media (max-width: 919px) {
+@media (max-width: 1129px) {
   .header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    height: 60px; } }
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; } }
 
-@media (max-width: 919px) {
-  .mobile_nav_buttons {
-    display: none; } }
+@media (max-width: 549px) {
+  .header {
+    width: 98%;
+    -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap; } }
 
-.mobile_nav_active {
-  display: none; }
-  @media (max-width: 919px) {
-    .mobile_nav_active {
-      display: block; } }
-
-@media (max-width: 919px) {
+@media (max-width: 1129px) {
   .header_navigation {
-    position: fixed;
-    background: #ffffff;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100vh;
-    margin-top: 0px;
-    z-index: 5; } }
-
-@media (max-width: 919px) {
-  .header_navigation ul {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center; } }
-
-@media (max-width: 919px) {
-  .header_navigation ul a {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 15px; } }
-
-@media (max-width: 619px) {
-  .header_logo span {
-    display: none; } }
-
-@media (max-width: 619px) {
-  .header_logo p {
-    display: none; } }
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+    width: 50%;
+    margin: 0 auto; } }
 
 @media (max-width: 489px) {
   .bitcoin_price h2 {
