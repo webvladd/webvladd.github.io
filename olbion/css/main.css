@@ -245,7 +245,7 @@ h2 {
   height: 100px;
   width: 59%;
   margin: 0 auto; }
-  @media (max-width: 1399px) {
+  @media (max-width: 1449px) {
     .header {
       width: 80%; } }
   @media (max-width: 1079px) {

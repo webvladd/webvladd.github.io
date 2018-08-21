@@ -32,6 +32,10 @@
     width: 50%;
     margin: 0 auto; } }
 
+@media (max-width: 766px) {
+  .header_navigation {
+    width: 100%; } }
+
 @media (max-width: 489px) {
   .bitcoin_price h2 {
     font-size: 22px;
