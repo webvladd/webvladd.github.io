@@ -1,8 +1,4 @@
 window.onload = function() {
-	function getEssence (arg) {
-		return document.querySelector(arg);
-	};
-
 	// Preloader
 	function stopPreloader() {
 		setTimeout( function() {
@@ -11,7 +7,15 @@ window.onload = function() {
 			}
 		}, 5);
 	}
-	stopPreloader();	
+	stopPreloader();
+
+	// loading graphics
+	(function(){var c=document.getElementById("maanimo-widget_crypto-currency-chart_style_swap");c.innerHTML='<ifr'+'ame src="//maanimo.com/widget/crypto?'+c.id+'='+encodeURIComponent(c.innerHTML.split('<scr')[0])+'" scrolling="no" frameborder="0" style="width:100%;height:100%;"></ifr'+'ame>';})();
+
+	// getEssence
+	function getEssence (arg) {
+		return document.querySelector(arg);
+	};	
 	
 	// Pop-up
 	function popUpBehavior() {
@@ -48,7 +52,7 @@ window.onload = function() {
 
 	getEssence('.nav_open_btn').onclick = function(arg) {
 		arg.preventDefault();
-		mobMenuBehavior();		
+		mobMenuBehavior();
 	};
 
 	getEssence('.nav_cancel_btn').onclick = function(arg) {
@@ -63,15 +67,10 @@ window.onload = function() {
 		} else {
 			getEssence('.languages_drop_down').classList.remove('lang_drop_active');
 		};
-		// getEssence('.languages_drop_down').classList.toggle('lang_drop_active');
 	};
 
 	getEssence('.language_page_now').onclick = function(arg) {
 		arg.preventDefault();
 		changeLanguage();
 	};
-
-	// console.log(getEssence('.number'));
-
 };
-

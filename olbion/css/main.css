@@ -75,12 +75,6 @@ h2 {
   font-size: 28px;
   font-weight: 400; }
 
-h3 {
-  color: #ffffff;
-  font-family: "Lato-Bold", sans-serif;
-  font-size: 18px;
-  font-weight: 700; }
-
 /*============ PRELOADER STYLE ==========*/
 .preloader {
   background: #e8f1fa;
@@ -1054,13 +1048,17 @@ h3 {
     @media (max-width: 549px) {
       .footer_lists_wrap ul {
         width: 80%; } }
-    .footer_lists_wrap ul h3 {
+    .footer_lists_wrap ul .footer_header_block {
+      color: #ffffff;
+      font-family: "Lato-Bold", sans-serif;
+      font-size: 18px;
+      font-weight: 700;
       margin-bottom: 6px; }
       @media (max-width: 799px) {
-        .footer_lists_wrap ul h3 {
+        .footer_lists_wrap ul .footer_header_block {
           margin-top: 49px; } }
       @media (max-width: 549px) {
-        .footer_lists_wrap ul h3 {
+        .footer_lists_wrap ul .footer_header_block {
           font-size: 16px; } }
     .footer_lists_wrap ul a {
       color: #ffffff;
