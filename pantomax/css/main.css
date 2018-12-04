@@ -92,7 +92,6 @@ h2 {
   margin: 0 auto;
   overflow: hidden;
   width: 100%;
-  min-width: 380px;
   background-color: #060606; }
 
 .top_block {
@@ -471,7 +470,7 @@ h2 {
             font-weight: 400; }
           .top_block .top_block_description .top_block_form .order_form .order_form_top div p:last-child {
             color: white;
-            font-family: "PT Sans Narrow";
+            font-family: "PTSans-Narrow", sans-serif;
             font-weight: 400;
             font-size: 48px;
             display: -webkit-box;
@@ -542,7 +541,7 @@ h2 {
                     box-shadow: 2.5px 4.3px 25px rgba(250, 74, 27, 0.35);
             border: none;
             color: white;
-            font-family: "PT Sans Narrow";
+            font-family: "PTSans-Narrow", sans-serif;
             font-size: 22px;
             font-weight: 700;
             text-transform: uppercase;
@@ -576,7 +575,7 @@ h2 {
               -webkit-align-items: center;
                   -ms-flex-align: center;
                       align-items: center;
-              margin-right: 25px; }
+              margin-right: 10%; }
               .top_block .top_block_description .top_block_form .order_form form button span i {
                 width: 11px;
                 height: 18px;
@@ -736,7 +735,7 @@ h2 {
                 border-radius: 10px;
         border: none;
         color: white;
-        font-family: "PT Sans";
+        font-family: "PTSans-Bold", sans-serif;
         font-size: 24px;
         text-transform: uppercase;
         text-align: center; }
