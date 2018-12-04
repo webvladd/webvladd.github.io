@@ -92,6 +92,7 @@ h2 {
   margin: 0 auto;
   overflow: hidden;
   width: 100%;
+  min-width: 380px;
   background-color: #060606; }
 
 .top_block {
