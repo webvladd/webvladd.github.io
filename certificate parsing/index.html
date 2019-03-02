@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
+	<div class="container">
+		<div class="list">
+			<ul class="list__certificates">
+				<li class="list__certificat_item" dada-serial="default">Иванов Иван Иванович</li>
+			</ul>
+			<button class="list__button list__button_add list__button_activ" title="Go to Добавление сертификата">Добавить</button>
+			<button class="list__button list__button_cancel" title="Go to Добавление сертификата">Отменить</button>
+		</div>
+
+		<div class="drop-zone">
+			<ul class="info__list">
+				<li class="info__list_item info__list_activ choose-certificate">Выберите сертификат для просмотра информации</li>
+				<li class="info__list_item certificate-adding-field">Перетащите файл сертификата в это поле</li>
+				<li class="info__list_item message-been-added">Такой сертификат уже есть</li>
+				<li class="info__list_item clodefault">
+					<span>Common Name: Иванов Иван Иванович</span>
+					<span>Issuer CN: ЦСК ПрАТ "IBK"</span>
+					<span>Valid From: 2018-12-11</span>
+					<span>Valid Till: 2019-10-10</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="hex.js"></script>
+	<script type="text/javascript" src="base64.js"></script>
+	<script type="text/javascript" src="oids.js"></script>
+	<script type="text/javascript" src="int10.js"></script>
+	<script type="text/javascript" src="asn1.js"></script>
+	<script type="text/javascript" src="dom.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>

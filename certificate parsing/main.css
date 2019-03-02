@@ -1,0 +1,102 @@
+li {
+	list-style: none;
+}
+
+.container {
+	width: 565px;
+	height: 200px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	justify-content: space-between;
+}
+
+.list__certificates {
+	margin: 0;
+	padding: 0;
+	width: 225px;
+	border: solid 1px #000000;
+}
+
+.list__certificat_item {
+	padding: 9px 6px;
+	box-sizing: border-box;
+	border-bottom: solid 1px #000000;
+	position: relative;
+	text-transform: capitalize;
+}
+
+.list__certificat_item:last-child {
+	border-bottom: none;
+}
+
+.list__certificat_item:hover {
+	cursor: pointer;
+}
+
+.list__certificat_activ {
+	background-color: #d8d8d8
+}
+
+.list__certificat_activ:after {
+	content: "";
+	display: inline-block;
+	border: 5px solid transparent;
+	border-left: 10px solid #828282;
+	width: 0;
+	height: 0;
+	position: absolute;
+	right: 0px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.list__button {
+	padding: 5px 20px;
+	box-sizing: border-box;
+	border: solid 1px #000000;
+	border-radius: 5px;
+	background-color: #d8d8d8;
+	display: none;
+	margin: 48px auto 0;
+}
+
+.list__button:hover {
+	cursor: pointer;
+}
+
+.list__button_activ{
+	display:block;
+}
+
+.drop-zone {
+	width: 280px;
+	height: 200px;
+	border: solid 1px #000000;
+}
+
+.drop-zone_activ {
+	border: dashed 1px #000000;
+}
+
+.info__list{
+	margin: 0;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.info__list_item {
+	display: none;
+	font-size: 14px;
+}
+
+.info__list_activ {
+	display: flex;
+	flex-direction: column;
+}
+
+.choose-certificate, .certificate-adding-field {
+	text-align: center;
+}
