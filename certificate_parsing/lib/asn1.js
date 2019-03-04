@@ -292,7 +292,6 @@ ASN1.prototype.typeName = function () {
     case 3: return "Private_" + this.tag.tagNumber.toString();
     }
 };
-
 ASN1.prototype.content = function (maxLength) { // a preview of the content (intended for humans)
     if (this.tag === undefined)
         return null;

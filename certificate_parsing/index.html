@@ -15,11 +15,10 @@
 			<button class="list__button list__button_cancel" title="Go to Добавление сертификата">Отменить</button>
 		</div>
 
-		<div class="drop-zone">
+		<div class="info-zone info-drop-activ">
 			<ul class="info__list">
 				<li class="info__list_item info__list_activ choose-certificate">Выберите сертификат для просмотра информации</li>
-				<li class="info__list_item certificate-adding-field">Перетащите файл сертификата в это поле</li>
-				<li class="info__list_item message-been-added">Такой сертификат уже есть</li>
+				<li class="info__list_item message-been-added">Сертификат с таким названием уже добавлен</li>
 				<li class="info__list_item clodefault">
 					<span>Common Name: Иванов Иван Иванович</span>
 					<span>Issuer CN: ЦСК ПрАТ "IBK"</span>
@@ -28,14 +27,17 @@
 				</li>
 			</ul>
 		</div>
-	</div>
 
-	<script type="text/javascript" src="hex.js"></script>
-	<script type="text/javascript" src="base64.js"></script>
-	<script type="text/javascript" src="oids.js"></script>
-	<script type="text/javascript" src="int10.js"></script>
-	<script type="text/javascript" src="asn1.js"></script>
-	<script type="text/javascript" src="dom.js"></script>
-	<script src="main.js"></script>
+		<div class="drop-zone">
+			<li class="">Перетащите файл сертификата в это поле</li>
+		</div>
+	</div>
+<script type="text/javascript" src="lib/hex.js"></script>
+<script type="text/javascript" src="lib/base64.js"></script>
+<script type="text/javascript" src="lib/oids.js"></script>
+<script type="text/javascript" src="lib/int10.js"></script>
+<script type="text/javascript" src="lib/asn1.js"></script>
+<script type="text/javascript" src="lib/dom.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

@@ -1,178 +1,225 @@
 window.onload = function () {
-	 var reHex = /^\s*(?:[0-9A-Fa-f][0-9A-Fa-f]\s*)+$/,
-			dropZone = document.querySelector('.drop-zone'),
-			listCertificat = document.querySelector('.list__certificates'),
-			listInfo = document.querySelector('.info__list'),
-			tree = dropZone,
-			dump;
+	var maxLength = 10240,
+			reHex = /^\s*(?:[0-9A-Fa-f][0-9A-Fa-f]\s*)+$/,
+			hash = null,
+			givDomElement = function (elem) {return document.querySelector(elem);},
+			dropZone = givDomElement('.drop-zone'),
+			infoZone = givDomElement('.info-zone'),
+			listCertificat = givDomElement('.list__certificates'),
+			listInfo = givDomElement('.info__list'),
+			listButtonAdd = givDomElement('.list__button_add'),
+			listButtonCancel = givDomElement('.list__button_cancel'),
+			dropZoneFile;
 
-			document.querySelector('.list__button_cancel').addEventListener('click', function (e) {
-				e.stopPropagation();
-				e.preventDefault();
-				document.querySelector('.list__button_add').classList.toggle('list__button_activ');
-				document.querySelector('.list__button_cancel').classList.toggle('list__button_activ');
-				document.querySelector('.info__list_activ').classList.remove('info__list_activ');
-				listInfo.querySelector('.choose-certificate').classList.add('info__list_activ');
-				dropZone.classList.remove('drop-zone_activ');
-			})
+	function evtResetDefault(evt) {
+		if (evt.preventDefault) evt.preventDefault();
+		if (evt.stopPropagation) evt.stopPropagation();
+		return false;
+	};
 
-			document.querySelector('.list__button_add').addEventListener('click', function (e) {
-				e.stopPropagation();
-				e.preventDefault();
-				document.querySelector('.list__button_add').classList.toggle('list__button_activ');
-				document.querySelector('.list__button_cancel').classList.toggle('list__button_activ');
-				dropZone.classList.toggle('drop-zone_activ');
-				if (document.querySelector('.list__certificat_activ') !== null) {
-					document.querySelector('.list__certificat_activ').classList.remove('list__certificat_activ');
-					document.querySelector('.info__list_activ').classList.remove('info__list_activ');
-					listInfo.querySelector('.certificate-adding-field').classList.add('info__list_activ');
-				} else{
-					listInfo.querySelector('.info__list_activ').classList.remove('info__list_activ');
-					listInfo.querySelector('.certificate-adding-field').classList.add('info__list_activ');
-				}
-			})
+	listButtonCancel.addEventListener('click', function (evt) {
+		evtResetDefault(evt);
 
-			listCertificat.addEventListener('click', function (e) {
-				e.stopPropagation();
-				e.preventDefault();
+		listButtonAdd.classList.toggle('list__button_activ');
+		listButtonCancel.classList.toggle('list__button_activ');
+		dropZone.classList.remove('info-drop-activ');
+		infoZone.classList.add('info-drop-activ');
+	});
 
-				dropZone.classList.remove('drop-zone_activ');
-				document.querySelector('.list__button_cancel').classList.remove('list__button_activ');
-				document.querySelector('.list__button_add').classList.add('list__button_activ');
+	listButtonAdd.addEventListener('click', function (evt) {
+		evtResetDefault(evt);
 
-				if (this.querySelector('.list__certificat_activ') === null) {
-					e.target.classList.add('list__certificat_activ');
-					listInfo.querySelector('.info__list_activ').classList.remove('info__list_activ');
-					listInfo.querySelector('.clo'+e.target.getAttribute('dada-serial')).classList.add('info__list_activ');
-				} else {
-					this.querySelector('.list__certificat_activ').classList.remove('list__certificat_activ');
-					listInfo.querySelector('.info__list_activ').classList.remove('info__list_activ');
-					e.target.classList.add('list__certificat_activ');
-					listInfo.querySelector('.clo'+e.target.getAttribute('dada-serial')).classList.add('info__list_activ');
-				}
+		listButtonAdd.classList.toggle('list__button_activ');
+		listButtonCancel.classList.toggle('list__button_activ');
+		infoZone.classList.remove('info-drop-activ');
+		dropZone.classList.add('info-drop-activ');
+	});
+
+	listCertificat.addEventListener('click', function (evt) {
+		evtResetDefault(evt);
+
+		dropZone.classList.remove('info-drop-activ');
+		infoZone.classList.add('info-drop-activ');
+		listButtonCancel.classList.remove('list__button_activ');
+		listButtonAdd.classList.add('list__button_activ');
+
+		if (this.querySelector('.list__certificat_activ') === null) {
+			evt.target.classList.add('list__certificat_activ');
+			listInfo.querySelector('.info__list_activ').classList.remove('info__list_activ');
+			listInfo.querySelector('.clo'+evt.target.getAttribute('dada-serial')).classList.add('info__list_activ');
+		} else {
+			this.querySelector('.list__certificat_activ').classList.remove('list__certificat_activ');
+			listInfo.querySelector('.info__list_activ').classList.remove('info__list_activ');
+			evt.target.classList.add('list__certificat_activ');
+			listInfo.querySelector('.clo'+evt.target.getAttribute('dada-serial')).classList.add('info__list_activ');
+		};
+	});
+
+	function buildList (){
+		var objCertificate = window.localStorage.getItem('objCertificate');
+		if(objCertificate !== null){
+			objCertificate = JSON.parse(objCertificate, function (key, value) {
+				if (key == 'serialNumber') return new Object (value);
+				return value;
 			});
 
-function buildList (){
-	
-	var objCertificate = window.localStorage.getItem('objCertificate');
-	if(objCertificate !== null){
-		objCertificate = JSON.parse(objCertificate, function (key, value) {
-			if (key == 'serialNumber') return new Object (value);
-			return value;
-		})
+			for (var i = 0; i < objCertificate.serialNumber.length; i++) {
+				var listItem = localStorage.getItem(objCertificate.serialNumber[i])
+				listItem = JSON.parse(listItem, function (key, value) {
+					if (key == 'commonName') return new Object (value);
+					return value;
+				});
 
-		for (var i = 0; i < objCertificate.serialNumber.length; i++) {
-			var listItem = localStorage.getItem(objCertificate.serialNumber[i])
-			listItem = JSON.parse(listItem, function (key, value) {
-				if (key == 'commonName') return new Object (value);
-				return value;
-			})
-
-			var listCertificates = document.querySelector('.list__certificates');
-			var newLi = document.createElement('li');
+				var listCertificates = givDomElement('.list__certificates');
+				var newLi = document.createElement('li');
 				newLi.className = 'list__certificat_item';
 				newLi.setAttribute('dada-serial', objCertificate.serialNumber[i]);
 				newLi.innerHTML = listItem.commonName[1].toLowerCase();
 				listCertificates.appendChild(newLi);
 
-			var infiList = document.querySelector('.info__list');
-			var	newLiIfo = document.createElement('li');
-					newLiIfo.className = 'info__list_item'+' '+'clo'+ objCertificate.serialNumber[i];
-					newLiIfo.innerHTML = '<span>'+ listItem.commonName[0]+ ' ' + listItem.commonName[1]+'</span>' + '<span>'+ listItem.issuerCn[0]+ ' ' + listItem.issuerCn[1]+'</span>' + '<span>'+ listItem.validFrom[0]+ ' ' + listItem.validFrom[1]+'</span>'+ '<span>'+ listItem.validTill[0]+ ' ' + listItem.validTill[1]+'</span>';
-					infiList.appendChild(newLiIfo);
-		}
-	}
-}
-buildList ();
-
-function decode(der) {
-	var asn1 = ASN1.decode(der);
-	asn1.getDataArr();
-	asn1.toDOM();
-}
-
-
-function text(el, string) {
-	if ('textContent' in el){
-		el.textContent = string;
-	} else {
-		el.innerText = string;
-	}
-}
-
-function decodeBinaryString(str) {
-	var der;
-	try {
-		if (reHex.test(str)){
-			der = Hex.decode(str);
-		}
-		else if (Base64.re.test(str)){
-			der = Base64.unarmor(str);
-		}
-		else{
-			der = str;
-			decode(der);
-		}
-	}
-	catch (e) {
-		text(tree, 'Cannot decode file.');
-	}
-}
-
-function read(f) {
-	var r = new FileReader();
-	r.onloadend = function () {
-		if (r.error){
-			alert("Your browser couldn't read the specified file (error code " + r.error.code + ").");
-		} else {
-			decodeBinaryString(r.result);
-		}
+				var infiList = givDomElement('.info__list');
+				var	newLiIfo = document.createElement('li');
+				newLiIfo.className = 'info__list_item'+' '+'clo'+ objCertificate.serialNumber[i];
+				newLiIfo.innerHTML = '<span>'+ listItem.commonName[0]+ ' ' + listItem.commonName[1]+'</span>' + '<span>'+ listItem.issuerCn[0]+ ' ' + listItem.issuerCn[1]+'</span>' + '<span>'+ listItem.validFrom[0]+ ' ' + listItem.validFrom[1]+'</span>'+ '<span>'+ listItem.validTill[0]+ ' ' + listItem.validTill[1]+'</span>';
+				infiList.appendChild(newLiIfo);
+			};
+		};
 	};
-	r.readAsBinaryString(f);
-}
+	buildList();
 
-function stop(e) {
-	e.stopPropagation();
-	e.preventDefault();
-}
+	dropZone.addEventListener("dragenter", function (evt) {
+		evtResetDefault(evt);
+	}, false);
 
-function dragAccept(e) {
-	stop(e);
-	if (e.dataTransfer.files.length > 0){
-		read(e.dataTransfer.files[0]);
-	}
-}
+	dropZone.addEventListener("dragover", function (evt) {
+		evtResetDefault(evt);
+	}, false);
 
-function load() {
-	if (dropZone.files.length === 0){
-		alert("Select a file to load first.");
-		} else {
-			read(dropZone.files[0]);
-		}
-}
+	dropZone.addEventListener("drop", function (evt) {
+		evtResetDefault(evt);
+		dropZoneFile = evt.dataTransfer.files[0];
+		var sertificateName = dropZoneFile.name.replace(/.crt/g, ''),
+		objCertificate = window.localStorage.getItem('objCertificate'),
+		locStorObjCert;
 
-function loadFromHash() {
-	if (window.location.hash && window.location.hash != hash) {
-		hash = window.location.hash;
-		// Firefox is not consistent with other browsers and return an
-		// already-decoded hash string so we risk double-decoding here,
-		// but since % is not allowed in base64 nor hexadecimal, it's ok
-		var val = decodeURIComponent(hash.substr(1));
-		decodeText(val);
-	}
-}
+		listButtonAdd.classList.toggle('list__button_activ');
+		listButtonCancel.classList.toggle('list__button_activ');
+		dropZone.classList.remove('info-drop-activ');
+		infoZone.classList.add('info-drop-activ');
 
-// main
-if ('onhashchange' in window){
-	window.onhashchange = loadFromHash;
-	loadFromHash();
-	document.ondragover = stop;
-	document.ondragleave = stop;
-	}
+		function decode(der) {
+			var asn1 = ASN1.decode(der),
+					decodeResult=[];
+			asn1.toDOM();
 
-if ('FileReader' in window) {
-	dropZone.onchange = load;
-	document.ondrop = dragAccept;
-}
+			function identifierSearch (obj, value) {
+				for (var i = 0; i < obj.sub.length; i++) {
+					if (obj.sub[i].sub !== null) {
+						identifierSearch(obj.sub[i], value);
+					} else {
+						if (obj.sub[i].head.outerText.indexOf(value) !== -1) {
+							decodeResult.push(obj.sub[i].head.outerText, obj.sub[1].head.outerText);
+						};
+					};
+				};
+			};
 
-}
+			function resultSorting() {
+				identifierSearch(asn1.sub[0], '2.5.4.3');
+				identifierSearch(asn1.sub[0], 'UTCTime');
+
+				function locStorSetItem () {
+					var locObj = {
+						commonName: ['Common Name:', decodeResult[3].substring(21)],
+						issuerCn: ['Issuer CN:', decodeResult[1].substring(21)],
+						validFrom: ['Valid From:', decodeResult[4].substring(14).substring(0,10)],
+						validTill: ['Valid Till:', decodeResult[5].substring(14).substring(0,10)],
+					};
+
+					var listCertificates = givDomElement('.list__certificates'),
+					newLi = document.createElement('li');
+					newLi.setAttribute('dada-serial', sertificateName);
+					newLi.innerHTML = locObj.commonName[1].toLowerCase();
+					listCertificates.appendChild(newLi);
+
+					var infiList = givDomElement('.info__list'),
+					newLiIfo = document.createElement('li');
+					newLiIfo.innerHTML = '<span>'+'Common Name:'+' '+decodeResult[3].substring(21)+'</span>'+'<span>'+'Issuer CN:'+' '+decodeResult[1].substring(21)+'</span>'+'<span>'+ 'Valid From:'+' '+decodeResult[4].substring(14).substring(0,10)+'</span>'+'<span>'+'Valid Till:'+' '+decodeResult[5].substring(14).substring(0,10)+'</span>';
+					infiList.appendChild(newLiIfo);
+					if (givDomElement('.list__certificat_activ') === null) {
+						newLi.className = 'list__certificat_item'+' '+'list__certificat_activ';
+						givDomElement('.info__list_activ').classList.remove('info__list_activ');
+						newLiIfo.className = 'info__list_item'+' '+'clo'+ sertificateName+' '+'info__list_activ';
+					} else {
+						givDomElement('.list__certificat_activ').classList.remove('list__certificat_activ');
+						givDomElement('.info__list_activ').classList.remove('info__list_activ');
+						newLi.className = 'list__certificat_item'+' '+'list__certificat_activ';
+						newLiIfo.className = 'info__list_item'+' '+'clo'+ sertificateName+' '+'info__list_activ';
+					};
+
+					locObj = JSON.stringify(locObj);
+					window.localStorage.setItem(sertificateName, locObj);
+				};
+
+				if(objCertificate !== null){
+					objCertificate = JSON.parse(objCertificate, function (key, value) {
+						if (key == 'serialNumber') return new Object (value);
+						return value;
+					});
+					if (objCertificate.serialNumber.indexOf(sertificateName) !== -1) {
+						givDomElement('.info__list_activ').classList.remove('info__list_activ');
+						givDomElement('.message-been-added').classList.add('info__list_activ');
+					} else {
+						objCertificate.serialNumber.push(sertificateName);
+						locStorObjCert = JSON.stringify(objCertificate);
+						window.localStorage.setItem('objCertificate', locStorObjCert);
+						locStorSetItem();
+					};
+				} else {
+					objCertificate = {
+						serialNumber:[sertificateName]
+					};
+					locStorObjCert = JSON.stringify(objCertificate);
+					window.localStorage.setItem('objCertificate', locStorObjCert);
+					locStorSetItem();
+				};
+			};
+			resultSorting();
+		};
+
+		function decodeBinaryString(str) {
+			var der;
+				try {
+					if (reHex.test(str))
+						der = Hex.decode(str);
+					else if (Base64.re.test(str))
+						der = Base64.unarmor(str);
+					else
+						der = str;
+					decode(der);
+				} catch (e) {
+						text(tree, 'Cannot decode file.');
+						dump.innerHTML = '';
+				}
+		};
+
+		function read(f) {
+			var r = new FileReader();
+			r.onloadend = function () {
+				if (r.error)
+					alert("Your browser couldn't read the specified file (error code " + r.error.code + ").");
+				else
+					decodeBinaryString(r.result);
+			};
+			r.readAsBinaryString(f);
+		};
+
+		function dragAccept(evt) {
+			if (evt.dataTransfer.files.length > 0)
+				read(evt.dataTransfer.files[0]);
+		};
+
+		dragAccept(evt);
+		dropZoneFile = undefined;
+	}, false);
+};

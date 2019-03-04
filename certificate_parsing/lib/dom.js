@@ -20,7 +20,6 @@ var ASN1 = (typeof module !== 'undefined') ? require('./asn1.js') : window.ASN1,
     oids = (typeof module !== 'undefined') ? require('./oids.js') : window.oids,
     lineLength = 80,
     contentLength = 8 * lineLength,
-    resultGetDataArr = [],
     DOM = {
         ellipsis: "\u2026",
         tag: function (tagName, className) {
@@ -54,83 +53,80 @@ var ASN1 = (typeof module !== 'undefined') ? require('./asn1.js') : window.ASN1,
         }
     };
 
-ASN1.prototype.getDataArr = function (spaces) {
-   resultGetDataArr.push(this.content(contentLength))
-    if (this.sub !== null) {
-        for (var i = 0, max = this.sub.length; i < max; ++i)
-            this.sub[i].getDataArr(spaces);
-    }
-}
-
-
 ASN1.prototype.toDOM = function (spaces) {
-     var certificatSerial;
-     var objCertificate = window.localStorage.getItem('objCertificate');
-     var locStorObjCert;
-
-    for (var i = 0; i < resultGetDataArr.length; i++) {
-         
-        if (resultGetDataArr[i].indexOf('2.5.4.5') !== -1) {
-            certificatSerial = resultGetDataArr[i+1];
-        }
-    }
-
-    if(objCertificate !== null){
-        objCertificate = JSON.parse(objCertificate, function (key, value) {
-            if (key == 'serialNumber') return new Object (value);
-            return value;
-        })
-        if (objCertificate.serialNumber.indexOf(certificatSerial) !== -1) {
-            document.querySelector('.info__list_activ').classList.remove('info__list_activ');
-            document.querySelector('.message-been-added').classList.add('info__list_activ');
-        } else {
-                objCertificate.serialNumber.push(certificatSerial)
-                locStorObjCert = JSON.stringify(objCertificate);
-                window.localStorage.setItem('objCertificate', locStorObjCert);
-                locStorSetItem();
-        }
-    } else {
-        objCertificate = {
-            serialNumber:[certificatSerial]
-        };
-        locStorObjCert = JSON.stringify(objCertificate);
-        window.localStorage.setItem('objCertificate', locStorObjCert);
-        locStorSetItem();
-    };
-
-    function locStorSetItem() {
-        var locObj = {
-            commonName: ['Common Name:', resultGetDataArr[39]],
-            issuerCn: ['Issuer CN:', resultGetDataArr[11]],
-            validFrom: ['Valid From:', resultGetDataArr[33].substring(0,10)],
-            validTill: ['Valid Till:', resultGetDataArr[34].substring(0,10)]
-        }
-
-        var listCertificates = document.querySelector('.list__certificates'),
-            newLi = document.createElement('li');
-            newLi.setAttribute('dada-serial', certificatSerial);
-            newLi.innerHTML = resultGetDataArr[39].toLowerCase();
-            listCertificates.appendChild(newLi);
-
-        var infiList = document.querySelector('.info__list'),
-            newLiIfo = document.createElement('li');
-            newLiIfo.innerHTML = '<span>'+'Common Name:'+' '+resultGetDataArr[39]+'</span>'+'<span>'+'Issuer CN:'+' '+resultGetDataArr[11]+'</span>'+'<span>'+ 'Valid From:'+' '+resultGetDataArr[33].substring(0,10)+'</span>'+'<span>'+'Valid Till:'+' '+resultGetDataArr[34].substring(0,10)+'</span>';
-            infiList.appendChild(newLiIfo);
-            if (document.querySelector('.list__certificat_activ') === null) {
-                newLi.className = 'list__certificat_item'+' '+'list__certificat_activ';
-                document.querySelector('.info__list_activ').classList.remove('info__list_activ');
-                newLiIfo.className = 'info__list_item'+' '+'clo'+ certificatSerial+' '+'info__list_activ';
-            } else {
-                document.querySelector('.list__certificat_activ').classList.remove('list__certificat_activ');
-                document.querySelector('.info__list_activ').classList.remove('info__list_activ');
-                newLi.className = 'list__certificat_item'+' '+'list__certificat_activ';
-                newLiIfo.className = 'info__list_item'+' '+'clo'+ certificatSerial+' '+'info__list_activ';
+    spaces = spaces || '';
+    var isOID = (typeof oids === 'object') && (this.tag.isUniversal() && (this.tag.tagNumber == 0x06));
+    var node = DOM.tag("div", "node");
+    node.asn1 = this;
+    var head = DOM.tag("div", "head");
+    head.innerHTML = "<span class='spaces'>" + spaces + "</span>" + this.typeName().replace(/_/g, " ");
+    var content = this.content(contentLength);
+    if (content !== null) {
+        var preview = DOM.tag("span", "preview"),
+            shortContent;
+        if (isOID)
+            content = content.split('\n', 1)[0];
+        shortContent = (content.length > lineLength) ? content.substring(0, lineLength) + DOM.ellipsis : content;
+        preview.appendChild(DOM.space());
+        preview.appendChild(DOM.text(shortContent));
+        if (isOID) {
+            var oid = oids[content];
+            if (oid) {
+                if (oid.d) {
+                    preview.appendChild(DOM.space());
+                    var oidd = DOM.tag("span", "oid description");
+                    oidd.appendChild(DOM.text(oid.d));
+                    preview.appendChild(oidd);
+                }
+                if (oid.c) {
+                    preview.appendChild(DOM.space());
+                    var oidc = DOM.tag("span", "oid comment");
+                    oidc.appendChild(DOM.text("(" + oid.c + ")"));
+                    preview.appendChild(oidc);
+                }
             }
-        locObj = JSON.stringify(locObj);
-        window.localStorage.setItem(certificatSerial, locObj);
+        }
+        head.appendChild(preview);
+        content = DOM.breakLines(content, lineLength);
+        content = content.replace(/</g, "&lt;");
+        content = content.replace(/\n/g, "<br>");
     }
-
-    resultGetDataArr = [];
+    node.appendChild(head);
+    this.node = node;
+    this.head = head;
+    var value = DOM.tag("div", "value");
+    var s = "Offset: " + this.stream.pos + "<br>";
+    s += "Length: " + this.header + "+";
+    if (this.length >= 0)
+        s += this.length;
+    else
+        s += (-this.length) + " (undefined)";
+    if (this.tag.tagConstructed)
+        s += "<br>(constructed)";
+    else if ((this.tag.isUniversal() && ((this.tag.tagNumber == 0x03) || (this.tag.tagNumber == 0x04))) && (this.sub !== null))
+        s += "<br>(encapsulates)";
+    //TODO if (this.tag.isUniversal() && this.tag.tagNumber == 0x03) s += "Unused bits: "
+    if (content !== null) {
+        s += "<br>Value:<br><b>" + content + "</b>";
+        if (isOID && oid) {
+            if (oid.d) s += "<br>" + oid.d;
+            if (oid.c) s += "<br>" + oid.c;
+            if (oid.w) s += "<br>(warning!)";
+        }
+    }
+    value.innerHTML = s;
+    node.appendChild(value);
+    var sub = DOM.tag("div", "sub");
+    if (this.sub !== null) {
+        spaces += '\xA0 ';
+        for (var i = 0, max = this.sub.length; i < max; ++i)
+            sub.appendChild(this.sub[i].toDOM(spaces));
+    }
+    node.appendChild(sub);
+    head.onclick = function () {
+        node.className = (node.className == "node collapsed") ? "node" : "node collapsed";
+    };
+    return node;
 };
 ASN1.prototype.fakeHover = function (current) {
     this.node.className += " hover";

@@ -21,7 +21,7 @@ li {
 }
 
 .list__certificat_item {
-	padding: 9px 6px;
+	padding: 9px 20px 9px 6px;
 	box-sizing: border-box;
 	border-bottom: solid 1px #000000;
 	position: relative;
@@ -71,15 +71,27 @@ li {
 	display:block;
 }
 
-.drop-zone {
+.info-zone {
 	width: 280px;
 	height: 200px;
 	border: solid 1px #000000;
+	display: none;
 }
 
-.drop-zone_activ {
+.drop-zone {
+	width: 280px;
+	height: 200px;
 	border: dashed 1px #000000;
+	display: none;
+	padding: 5px;
+	box-sizing: border-box;
+	font-size: 14px;
 }
+
+.info-drop-activ {
+	display: block;
+}
+
 
 .info__list{
 	margin: 0;
