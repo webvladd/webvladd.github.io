@@ -117,8 +117,8 @@ window.onload = function () {
 					if (obj.sub[i].sub !== null) {
 						identifierSearch(obj.sub[i], value);
 					} else {
-						if (obj.sub[i].head.outerText.indexOf(value) !== -1) {
-							decodeResult.push(obj.sub[i].head.outerText, obj.sub[1].head.outerText);
+						if (obj.sub[i].head.innerText.indexOf(value) !== -1) {
+							decodeResult.push(obj.sub[i].head.innerText, obj.sub[1].head.innerText);
 						};
 					};
 				};
@@ -200,7 +200,7 @@ window.onload = function () {
 				} catch (e) {
 						text(tree, 'Cannot decode file.');
 						dump.innerHTML = '';
-				}
+				};
 		};
 
 		function read(f) {
