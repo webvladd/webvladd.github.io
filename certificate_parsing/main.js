@@ -9,7 +9,10 @@ window.onload = function () {
 			listInfo = givDomElement('.info__list'),
 			listButtonAdd = givDomElement('.list__button_add'),
 			listButtonCancel = givDomElement('.list__button_cancel'),
-			dropZoneFile;
+			lineLength = 80,
+			contentLength = 8 * lineLength,
+			dropZoneFile,
+			decodeResult;
 
 	function evtResetDefault(evt) {
 		if (evt.preventDefault) evt.preventDefault();
@@ -98,8 +101,7 @@ window.onload = function () {
 	dropZone.addEventListener("drop", function (evt) {
 		evtResetDefault(evt);
 		dropZoneFile = evt.dataTransfer.files[0];
-		var sertificateName = dropZoneFile.name.replace(/.crt/g, ''),
-		objCertificate = window.localStorage.getItem('objCertificate'),
+		var objCertificate = window.localStorage.getItem('objCertificate'),
 		locStorObjCert;
 
 		listButtonAdd.classList.toggle('list__button_activ');
@@ -108,83 +110,106 @@ window.onload = function () {
 		infoZone.classList.add('info-drop-activ');
 
 		function decode(der) {
-			var asn1 = ASN1.decode(der),
-					decodeResult=[];
-			asn1.toDOM();
-
-			function identifierSearch (obj, value) {
-				for (var i = 0; i < obj.sub.length; i++) {
-					if (obj.sub[i].sub !== null) {
-						identifierSearch(obj.sub[i], value);
-					} else {
-						if (obj.sub[i].head.innerText.indexOf(value) !== -1) {
-							decodeResult.push(obj.sub[i].head.innerText, obj.sub[1].head.innerText);
-						};
-					};
-				};
+			var decodeResult = ASN1.decode(der);
+			
+			decodeResult.dataFromSortResult = {
+				timeCertificateValidity: [],
 			};
 
-			function resultSorting() {
-				identifierSearch(asn1.sub[0], '2.5.4.3');
-				identifierSearch(asn1.sub[0], 'UTCTime');
+			decodeResult.sub.__proto__.content = ASN1.prototype.content;
+			decodeResult.sub.__proto__.sortResult = function () {
+				var obj = this;
 
-				function locStorSetItem () {
-					var locObj = {
-						commonName: ['Common Name:', decodeResult[3].substring(21)],
-						issuerCn: ['Issuer CN:', decodeResult[1].substring(21)],
-						validFrom: ['Valid From:', decodeResult[4].substring(14).substring(0,10)],
-						validTill: ['Valid Till:', decodeResult[5].substring(14).substring(0,10)],
-					};
+				function givValidityPeriod (obj) {
+					if (obj.tag === undefined){
+						return;
+					}
 
-					var listCertificates = givDomElement('.list__certificates'),
-					newLi = document.createElement('li');
-					newLi.setAttribute('dada-serial', sertificateName);
-					newLi.innerHTML = locObj.commonName[1].toLowerCase();
-					listCertificates.appendChild(newLi);
+					var content = obj.posContent(),
+							len = Math.abs(obj.length);
 
-					var infiList = givDomElement('.info__list'),
-					newLiIfo = document.createElement('li');
-					newLiIfo.innerHTML = '<span>'+'Common Name:'+' '+decodeResult[3].substring(21)+'</span>'+'<span>'+'Issuer CN:'+' '+decodeResult[1].substring(21)+'</span>'+'<span>'+ 'Valid From:'+' '+decodeResult[4].substring(14).substring(0,10)+'</span>'+'<span>'+'Valid Till:'+' '+decodeResult[5].substring(14).substring(0,10)+'</span>';
-					infiList.appendChild(newLiIfo);
-					if (givDomElement('.list__certificat_activ') === null) {
-						newLi.className = 'list__certificat_item'+' '+'list__certificat_activ';
-						givDomElement('.info__list_activ').classList.remove('info__list_activ');
-						newLiIfo.className = 'info__list_item'+' '+'clo'+ sertificateName+' '+'info__list_activ';
+					switch (obj.tag.tagNumber) {
+						case 0x17: // UTCTime
+						case 0x18: // GeneralizedTime
+							decodeResult.dataFromSortResult.timeCertificateValidity.push(obj.stream.parseTime(content, content + len, (obj.tag.tagNumber == 0x17)));
+					}
+					return
+				}
+				givValidityPeriod(obj)
+
+				var processedItem = this.content(contentLength)
+				if(processedItem === '(2 elem)'){
+					if (decodeResult.dataFromSortResult[this.sub[0].content(contentLength).split('\n', 1)[0]] === undefined) {
+						decodeResult.dataFromSortResult[this.sub[0].content(contentLength).split('\n', 1)[0]] = [this.sub[1].content(contentLength)];
 					} else {
-						givDomElement('.list__certificat_activ').classList.remove('list__certificat_activ');
-						givDomElement('.info__list_activ').classList.remove('info__list_activ');
-						newLi.className = 'list__certificat_item'+' '+'list__certificat_activ';
-						newLiIfo.className = 'info__list_item'+' '+'clo'+ sertificateName+' '+'info__list_activ';
-					};
+						decodeResult.dataFromSortResult[this.sub[0].content(contentLength).split('\n', 1)[0]].push(this.sub[1].content(contentLength));
+					}
+				}
 
-					locObj = JSON.stringify(locObj);
-					window.localStorage.setItem(sertificateName, locObj);
+				if (this.sub !== null) {
+					for (var i = 0, max = this.sub.length; i < max; ++i){
+						this.sub[i].sortResult();
+					}
+				}
+			}
+			decodeResult.__proto__.sortResult = decodeResult.sub.__proto__.sortResult;
+			decodeResult.sub[0].sortResult()
+
+			function locStorSetItem () {
+				var locObj = {
+					commonName: ['Common Name:', decodeResult.dataFromSortResult['2.5.4.3'][1]],
+					issuerCn: ['Issuer CN:', decodeResult.dataFromSortResult['2.5.4.3'][0]],
+					validFrom: ['Valid From:', decodeResult.dataFromSortResult.timeCertificateValidity[0].substring(0,10)],
+					validTill: ['Valid Till:', decodeResult.dataFromSortResult.timeCertificateValidity[1].substring(0,10)],
 				};
 
-				if(objCertificate !== null){
-					objCertificate = JSON.parse(objCertificate, function (key, value) {
-						if (key == 'serialNumber') return new Object (value);
-						return value;
-					});
-					if (objCertificate.serialNumber.indexOf(sertificateName) !== -1) {
-						givDomElement('.info__list_activ').classList.remove('info__list_activ');
-						givDomElement('.message-been-added').classList.add('info__list_activ');
-					} else {
-						objCertificate.serialNumber.push(sertificateName);
-						locStorObjCert = JSON.stringify(objCertificate);
-						window.localStorage.setItem('objCertificate', locStorObjCert);
-						locStorSetItem();
-					};
+				var listCertificates = givDomElement('.list__certificates'),
+				newLi = document.createElement('li');
+				newLi.setAttribute('dada-serial', decodeResult.dataFromSortResult['2.5.4.5'][1]);
+				newLi.innerHTML = locObj.commonName[1].toLowerCase();
+				listCertificates.appendChild(newLi);
+
+				var infiList = givDomElement('.info__list'),
+				newLiIfo = document.createElement('li');
+				newLiIfo.innerHTML = '<span>'+'Common Name:'+' '+decodeResult.dataFromSortResult['2.5.4.3'][1]+'</span>'+'<span>'+'Issuer CN:'+' '+decodeResult.dataFromSortResult['2.5.4.3'][0]+'</span>'+'<span>'+ 'Valid From:'+' '+decodeResult.dataFromSortResult.timeCertificateValidity[0].substring(0,10)+'</span>'+'<span>'+'Valid Till:'+' '+decodeResult.dataFromSortResult.timeCertificateValidity[1].substring(0,10)+'</span>';
+				infiList.appendChild(newLiIfo);
+				if (givDomElement('.list__certificat_activ') === null) {
+					newLi.className = 'list__certificat_item'+' '+'list__certificat_activ';
+					givDomElement('.info__list_activ').classList.remove('info__list_activ');
+					newLiIfo.className = 'info__list_item'+' '+'clo'+ decodeResult.dataFromSortResult['2.5.4.5'][1] +' '+'info__list_activ';
 				} else {
-					objCertificate = {
-						serialNumber:[sertificateName]
-					};
+					givDomElement('.list__certificat_activ').classList.remove('list__certificat_activ');
+					givDomElement('.info__list_activ').classList.remove('info__list_activ');
+					newLi.className = 'list__certificat_item'+' '+'list__certificat_activ';
+					newLiIfo.className = 'info__list_item'+' '+'clo'+ decodeResult.dataFromSortResult['2.5.4.5'][1] +' '+'info__list_activ';
+				};
+
+				locObj = JSON.stringify(locObj);
+				window.localStorage.setItem(decodeResult.dataFromSortResult['2.5.4.5'][1], locObj);
+			};
+
+			if(objCertificate !== null){
+				objCertificate = JSON.parse(objCertificate, function (key, value) {
+					if (key == 'serialNumber') return new Object (value);
+					return value;
+				});
+				if (objCertificate.serialNumber.indexOf(decodeResult.dataFromSortResult['2.5.4.5'][1]) !== -1) {
+					givDomElement('.info__list_activ').classList.remove('info__list_activ');
+					givDomElement('.message-been-added').classList.add('info__list_activ');
+				} else {
+					objCertificate.serialNumber.push(decodeResult.dataFromSortResult['2.5.4.5'][1]);
 					locStorObjCert = JSON.stringify(objCertificate);
 					window.localStorage.setItem('objCertificate', locStorObjCert);
 					locStorSetItem();
 				};
+			} else {
+				objCertificate = {
+					serialNumber:[decodeResult.dataFromSortResult['2.5.4.5'][1]]
+				};
+				locStorObjCert = JSON.stringify(objCertificate);
+				window.localStorage.setItem('objCertificate', locStorObjCert);
+				locStorSetItem();
 			};
-			resultSorting();
 		};
 
 		function decodeBinaryString(str) {
