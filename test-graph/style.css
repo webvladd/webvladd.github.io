@@ -1,0 +1,11 @@
+*{margin:0; padding: 0;}
+
+body {
+	background: #f9f9f9;
+}
+
+#chart_div {
+	width: 98vw;
+	height: 600px;
+	margin: 0 auto;
+}
