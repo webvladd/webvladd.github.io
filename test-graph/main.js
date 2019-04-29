@@ -5,7 +5,7 @@ window.onload = function () {
 			dataObj = [['Date', 'Red', 'Green']];
 
 	var xhr = new XMLHttpRequest();
-	xhr.open("GET", "chart_data", true);
+	xhr.open("GET", "chart_data", false);
 
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState == 4) {
