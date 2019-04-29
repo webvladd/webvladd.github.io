@@ -38,8 +38,6 @@ window.onload = function () {
 	}
 	xhr.send();
 
-	console.log(dataObj)
-
 	google.charts.load('current', {
 		callback: function () {
 			drawChart();
