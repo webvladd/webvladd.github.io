@@ -1,0 +1,9 @@
+/*==========FONTS==========*/
+
+@font-face {
+  font-family: "NunitoSans-Bold";
+  src: url("../fonts/NunitoSans-Bold.eot");
+  src: local("NunitoSans-Bold"), url("../fonts/NunitoSans-Bold.ttf");
+}
+
+/*=========END FONTS==========*/
