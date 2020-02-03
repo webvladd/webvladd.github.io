@@ -7,10 +7,6 @@ img {
 	width: 100%;
 }
 
-/*section {
-	border: solid 1px red;
-}*/
-
 .landing-page-wrapper {
 	max-width: 1920px;
 	width: 100%;
@@ -31,13 +27,13 @@ img {
 }
 
 .landing-page-wrapper header a.logo {
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: "NunitoSans-Regular", sans-serif;
 	font-size: 28px;
 	color: #ffffff;
 }
 
 .landing-page-wrapper header nav.lp-header-nav {
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: "NunitoSans-Regular", sans-serif;
 	color: #ffffff;
 	max-width: 1100px;
 	width: 100%;
@@ -75,7 +71,7 @@ img {
 }
 
 .landing-page-content .lp-banner-top .banner-top-text {
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: "NunitoSans-Regular", sans-serif;
 	color: #ffffff;
 }
 
@@ -102,7 +98,7 @@ img {
 }
 
 .landing-page-content .lp-banner-top .banner-top-btn a {
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: "NunitoSans-Regular", sans-serif;
 	color: #ffffff;
 	font-size: 18px;
 	background: #376092;
@@ -122,6 +118,12 @@ img {
 	padding-left: 60px;
 	width: 100%;
 	height: 100vh;
+	box-sizing: border-box;
+}
+
+.landing-page-content .predictive-risk-management-block {
+	background-color: #e6e6e6;
+	box-shadow: 0 20px 20px rgba(0,0,0,0.1);
 }
 
 .landing-page-content .predictive-risk-management-block {
@@ -132,8 +134,6 @@ img {
 	height: 40vh;
 }
 
-.landing-page-content .credit-monitor-block 
-
 .title-block {
 	box-sizing: border-box;
 	padding-top: 50px;
@@ -141,14 +141,14 @@ img {
 
 .title-block h3 {
 	text-align: center;
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: "NunitoSans-Regular", sans-serif;
 	color: #376092;
 	font-size: 34px;
 }
 
 .title-block p {
 	text-align: center;
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: "NunitoSans-Regular", sans-serif;
 	color: #376092;
 	font-size: 22px;
 }
@@ -169,16 +169,50 @@ img {
 	width: 100%;
 }
 
+.landing-page-content .predictive-risk-management-content .prm-content-slider img{
+	max-height: 440px;
+}
+
 .landing-page-content .alpha-generation-content .ag-content-text,
 .landing-page-content .predictive-risk-management-content .prm-content-text,
 .landing-page-content .credit-monitor-content .cm-content-text {
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: "NunitoSans-Regular", sans-serif;
 	font-size: 22px;
 	width: 100%;
 }
 
 .landing-page-content .alpha-generation-content .ag-content-text p {
 	margin-bottom: 10px;
+}
+
+.landing-page-content .predictive-risk-management-content .prm-first-paragraph {
+	margin-bottom: 20px;
+}
+
+.landing-page-content .predictive-risk-management-content .prm-first-paragraph p {
+	margin-bottom: 10px;
+}
+
+.landing-page-content .predictive-risk-management-content .prm-second-paragraph {
+	display: flex;
+	flex-direction: column;
+}
+
+.landing-page-content .predictive-risk-management-content .prm-second-paragraph span {
+	margin-bottom: 10px;
+	font-family: "NunitoSans-Bold", sans-serif;
+}
+
+.landing-page-content .credit-monitor-content .cm-content-text span {
+	font-family: "NunitoSans-Bold", sans-serif;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+
+.landing-page-content .credit-monitor-content .cm-content-text ul {
+	box-sizing: border-box;
+	padding-left: 20px;
 }
 
 .landing-page-content .credit-monitor-content .cm-content-text li {
@@ -190,8 +224,15 @@ img {
 }
 
 .landing-page-content .solutions-content {
-	justify-content: space-between;
+	flex-direction: column;
+	justify-content: center;
 	max-width: 1100px;
+}
+
+.landing-page-content .solutions-content .solutions-card-group {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
 }
 
 .landing-page-content .solutions-content .solutions-card {
@@ -205,13 +246,13 @@ img {
 }
 
 .landing-page-content .solutions-content .solutions-card .solutions-card-title {
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: "NunitoSans-Regular", sans-serif;
 	color: #376092;
 	font-size: 18px;
 }
 
 .landing-page-content .solutions-content .solutions-card .solutions-card-text {
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: "NunitoSans-Regular", sans-serif;
 	color: #376092;
 	font-size: 14px;
 }
@@ -229,6 +270,43 @@ img {
 .landing-page-content .solutions-content .solutions-card .solutions-card-text {
 	text-align: center;
 	margin-top: 25px;
+}
+
+.landing-page-content .solutions-content .how-it-works {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #eaf3fa;
+	border: solid 1px #cbd4dd;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	margin-top: 175px;
+}
+
+.landing-page-content .solutions-content .how-it-works .how-it-works-text {
+	font-family: "NunitoSans-Regular", sans-serif;
+	color: #1a6899;
+}
+
+.landing-page-content .solutions-content .how-it-works .how-it-works-text span {
+	font-size: 24px;
+}
+
+.landing-page-content .solutions-content .how-it-works .how-it-works-text p {
+	font-size: 20px;
+}
+
+.landing-page-content .solutions-content .how-it-works a {
+	font-family: "NunitoSans-Regular", sans-serif;
+	color: #1a6899;
+	font-size: 24px;
+	display: block;
+	white-space: nowrap;
+	background-color: #ffffff;
+	border: solid 1px #d6dadd;
+	padding: 10px 55px;
+	box-sizing: border-box;
 }
 
 /*======RESPONSIVE======*/
