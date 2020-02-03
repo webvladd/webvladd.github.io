@@ -110,7 +110,8 @@ img {
 .landing-page-content .alpha-generation-block,
 .landing-page-content .predictive-risk-management-block,
 .landing-page-content .credit-monitor-block,
-.landing-page-content .solutions-block {
+.landing-page-content .solutions-block,
+.landing-page-content .macro-regimes-monitor-block {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -156,7 +157,8 @@ img {
 .landing-page-content .alpha-generation-content,
 .landing-page-content .predictive-risk-management-content,
 .landing-page-content .credit-monitor-content,
-.landing-page-content .solutions-content{
+.landing-page-content .solutions-content,
+.landing-page-content .macro-regimes-monitor-content{
 	display: flex;
 	width: 100%;
 	align-items: center;
@@ -165,7 +167,8 @@ img {
 
 .landing-page-content .alpha-generation-content .ag-content-slider,
 .landing-page-content .predictive-risk-management-content .prm-content-slider,
-.landing-page-content .credit-monitor-content .cm-content-slider {
+.landing-page-content .credit-monitor-content .cm-content-slider,
+.landing-page-content .macro-regimes-monitor-content .mrm-content-slider {
 	width: 100%;
 }
 
@@ -175,7 +178,8 @@ img {
 
 .landing-page-content .alpha-generation-content .ag-content-text,
 .landing-page-content .predictive-risk-management-content .prm-content-text,
-.landing-page-content .credit-monitor-content .cm-content-text {
+.landing-page-content .credit-monitor-content .cm-content-text,
+.landing-page-content .macro-regimes-monitor-content .mrm-content-text {
 	font-family: "NunitoSans-Regular", sans-serif;
 	font-size: 22px;
 	width: 100%;
@@ -308,6 +312,47 @@ img {
 	padding: 10px 55px;
 	box-sizing: border-box;
 }
+
+.macro-regimes-monitor-content .mrm-content-text > p {
+	margin-bottom: 20px;
+}
+
+.macro-regimes-monitor-content .mrm-content-text span {
+	font-family: "NunitoSans-Bold", sans-serif;
+}
+
+.macro-regimes-monitor-content .mrm-content-text > span {
+	margin-bottom: 20px;
+	display: inline-block;
+	padding-left: 10%;
+	box-sizing: border-box;
+	text-decoration: underline;
+}
+
+.macro-regimes-monitor-content .mrm-content-text ul {
+	box-sizing: border-box;
+	padding-left: 10%;
+}
+
+.macro-regimes-monitor-content .mrm-content-text ul li {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+.macro-regimes-monitor-content .mrm-content-text ul li > img {
+	width: 42px;
+	height: 26px;
+	margin-right: 5px;
+}
+
+.macro-regimes-monitor-content .mrm-content-text ul li > span {
+	margin-right: 10px;
+}
+
+
+
+
 
 /*======RESPONSIVE======*/
 
