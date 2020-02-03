@@ -111,7 +111,9 @@ img {
 .landing-page-content .predictive-risk-management-block,
 .landing-page-content .credit-monitor-block,
 .landing-page-content .solutions-block,
-.landing-page-content .macro-regimes-monitor-block {
+.landing-page-content .macro-regimes-monitor-block,
+.landing-page-content .insights-videos-block,
+.landing-page-content .blog-block {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -158,7 +160,9 @@ img {
 .landing-page-content .predictive-risk-management-content,
 .landing-page-content .credit-monitor-content,
 .landing-page-content .solutions-content,
-.landing-page-content .macro-regimes-monitor-content{
+.landing-page-content .macro-regimes-monitor-content,
+.landing-page-content .insights-videos-content,
+.landing-page-content .blog-content {
 	display: flex;
 	width: 100%;
 	align-items: center;
@@ -349,6 +353,107 @@ img {
 .macro-regimes-monitor-content .mrm-content-text ul li > span {
 	margin-right: 10px;
 }
+
+.landing-page-content .insights-videos-block {
+	height: 60vh;
+}
+
+.landing-page-content .blog-block {
+	height: 40vh;
+	background-color: #eaf3fa;
+}
+
+.landing-page-content .blog-block .blog-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-center span {
+	font-family: "NunitoSans-Bold", sans-serif;
+	font-size: 14px;
+	text-decoration: underline;
+	color: #1758b4;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-center p {
+	font-family: "NunitoSans-Regular", sans-serif;
+	font-size: 14px;
+	color: #1758b4;
+	text-decoration: underline;
+	margin-bottom: 34px;
+	margin-top: 5px;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-center a {
+	font-family: "NunitoSans-Regular", sans-serif;
+	font-size: 18px;
+	color: #1758b4;
+	text-decoration: underline;
+	display: flex;
+	align-items: center;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-center a i{
+	background: url(../img/icons/arrow-right-mobile.svg) no-repeat 0px 3px;
+	width: 30px;
+	height: 12px;
+	margin-left: 5px;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-right p {
+	font-family: "NunitoSans-Regular", sans-serif;
+	font-size: 16px;
+	color: #1758b4;
+	margin-bottom: 14px;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-right form {
+	display: flex;
+	align-items: center;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-right input {
+	padding: 12px 15px;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	color: #a0a4a7;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-right button {
+	background-color: #0470bb;
+	width: 50px;
+	height: 39px;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-right button:before {
+	content: "";
+	display: block;
+	background: url(../img/icons/paper-plane.svg) no-repeat;
+	width: 20px;
+	height: 20px;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-right button:hover {
+	opacity: 0.5;
+}
+
+
+
 
 
 
