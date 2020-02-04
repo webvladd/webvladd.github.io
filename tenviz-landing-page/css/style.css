@@ -238,7 +238,6 @@ img {
 .landing-page-content .solutions-content {
 	flex-direction: column;
 	justify-content: center;
-	/*max-width: 1100px;*/
 }
 
 .landing-page-content .solutions-content .solutions-card-group,
@@ -291,7 +290,6 @@ img {
 .landing-page-content .team-expertise-content .have-questions {
 	display: flex;
 	width: 100%;
-	/*justify-content: space-between;*/
 	justify-content: center;
 	align-items: center;
 	background-color: #eaf3fa;
@@ -523,16 +521,13 @@ img {
 .landing-page-content .team-expertise-content {
 	flex-direction: column;
 	height: 100%;
-	/*align-items:;*/
 	justify-content: space-between;
-	/*border: solid 1px red;*/
 	padding-top: 20px;
 	box-sizing: border-box;
 }
 
 .landing-page-content .team-expertise-content .team-expertise-card-group {
 	justify-content: center;
-	/*align-items: center;*/
 }
 
 .landing-page-content .team-expertise-content .team-expertise-card {
@@ -562,20 +557,88 @@ img {
 
 .landing-page-content .team-expertise-content .have-questions {
 	margin-top: 0px;
-	/*justify-content: center;*/
 }
 
 .landing-page-content .team-expertise-content .have-questions .have-questions-text {
 	margin-right: 20%;
 }
 
+.landing-page-wrapper footer {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #a6a6a6;
+	padding-right: 60px;
+	padding-left: 60px;
+	box-sizing: border-box;
+}
 
+.landing-page-wrapper footer .copyright {
+	font-family: "NunitoSans-Regular", sans-serif;
+	font-size: 12px;
+}
 
+.landing-page-wrapper footer .copyright a {
+	color: #376092;
+}
 
+.landing-page-wrapper footer .telephone-email {
+	display: flex;
+	flex-direction: column;
+}
 
+.landing-page-wrapper footer .telephone-email a {
+	font-family: "NunitoSans-Regular", sans-serif;
+	color: #376092;
+	font-size: 12px;
+	display: flex;
+	align-items: center;
+}
 
+.landing-page-wrapper footer .telephone-email a i {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	margin-right: 15px;
+}
 
+.landing-page-wrapper footer .telephone-email .footer-phone i {
+	background: url(../img/icons/phonereceiver.svg) no-repeat;
+	background-size: contain;
+}
 
+.landing-page-wrapper footer .telephone-email .footer-email i {
+	background: url(../img/icons/email-icon.svg) no-repeat;
+	background-size: contain;
+}
+
+.landing-page-wrapper footer .social-networks {
+	display: flex;
+}
+
+.landing-page-wrapper footer .social-networks a {
+	width: 20px;
+	height: 20px;
+	display: block;
+	background-size: contain;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.landing-page-wrapper footer .social-networks-linkedin {
+	background: url(../img/icons/Linkedin.svg) no-repeat;
+}
+
+.landing-page-wrapper footer .social-networks-facebook {
+	background: url(../img/icons/Facebook_icon.svg) no-repeat;
+}
+
+.landing-page-wrapper footer .social-networks-twitter {
+	background: url(../img/icons/Twitter_bird_logo.svg) no-repeat 0px 2px;
+	background-color: #41ABE1;
+}
 
 /*======RESPONSIVE======*/
 
