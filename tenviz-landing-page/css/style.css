@@ -114,7 +114,8 @@ img {
 .landing-page-content .macro-regimes-monitor-block,
 .landing-page-content .insights-videos-block,
 .landing-page-content .blog-block,
-.landing-page-content .about-us-block {
+.landing-page-content .about-us-block,
+.landing-page-content .team-expertise-block {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -164,7 +165,8 @@ img {
 .landing-page-content .macro-regimes-monitor-content,
 .landing-page-content .insights-videos-content,
 .landing-page-content .blog-content,
-.landing-page-content .about-us-content {
+.landing-page-content .about-us-content,
+.landing-page-content .team-expertise-content {
 	display: flex;
 	width: 100%;
 	align-items: center;
@@ -236,16 +238,19 @@ img {
 .landing-page-content .solutions-content {
 	flex-direction: column;
 	justify-content: center;
-	max-width: 1100px;
+	/*max-width: 1100px;*/
 }
 
-.landing-page-content .solutions-content .solutions-card-group {
+.landing-page-content .solutions-content .solutions-card-group,
+.landing-page-content .team-expertise-content .team-expertise-card-group {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
+	max-width: 1100px;
 }
 
-.landing-page-content .solutions-content .solutions-card {
+.landing-page-content .solutions-content .solutions-card,
+.landing-page-content .team-expertise-content .team-expertise-card {
 	max-width: 260px;
 	width: 100%;
 	height: 230px;
@@ -282,10 +287,12 @@ img {
 	margin-top: 25px;
 }
 
-.landing-page-content .solutions-content .how-it-works {
+.landing-page-content .solutions-content .how-it-works,
+.landing-page-content .team-expertise-content .have-questions {
 	display: flex;
 	width: 100%;
-	justify-content: space-between;
+	/*justify-content: space-between;*/
+	justify-content: center;
 	align-items: center;
 	background-color: #eaf3fa;
 	border: solid 1px #cbd4dd;
@@ -294,12 +301,15 @@ img {
 	margin-top: 175px;
 }
 
-.landing-page-content .solutions-content .how-it-works .how-it-works-text {
+.landing-page-content .solutions-content .how-it-works .how-it-works-text,
+.landing-page-content .team-expertise-content .have-questions .have-questions-text {
 	font-family: "NunitoSans-Regular", sans-serif;
 	color: #1a6899;
+	margin-right: 5%;
 }
 
-.landing-page-content .solutions-content .how-it-works .how-it-works-text span {
+.landing-page-content .solutions-content .how-it-works .how-it-works-text span,
+.landing-page-content .team-expertise-content .have-questions .have-questions-text span {
 	font-size: 24px;
 }
 
@@ -307,7 +317,8 @@ img {
 	font-size: 20px;
 }
 
-.landing-page-content .solutions-content .how-it-works a {
+.landing-page-content .solutions-content .how-it-works a,
+.landing-page-content .team-expertise-content .have-questions a {
 	font-family: "NunitoSans-Regular", sans-serif;
 	color: #1a6899;
 	font-size: 24px;
@@ -454,7 +465,8 @@ img {
 	opacity: 0.5;
 }
 
-.landing-page-content .about-us-block {
+.landing-page-content .about-us-block,
+.landing-page-content .team-expertise-block {
 	height: 50vh;
 }
 
@@ -508,7 +520,54 @@ img {
 	color: #1758b4;
 }
 
+.landing-page-content .team-expertise-content {
+	flex-direction: column;
+	height: 100%;
+	/*align-items:;*/
+	justify-content: space-between;
+	/*border: solid 1px red;*/
+	padding-top: 20px;
+	box-sizing: border-box;
+}
 
+.landing-page-content .team-expertise-content .team-expertise-card-group {
+	justify-content: center;
+	/*align-items: center;*/
+}
+
+.landing-page-content .team-expertise-content .team-expertise-card {
+	margin-left: 20px;
+	margin-right: 20px;
+	padding: 15px;
+	box-sizing: border-box;
+}
+
+.landing-page-content .team-expertise-content .team-expertise-card span {
+	font-family: "NunitoSans-Regular", sans-serif;
+	font-size: 16px;
+	color: #376092;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.landing-page-content .team-expertise-content .team-expertise-card ul {
+	font-family: "NunitoSans-Regular", sans-serif;
+	font-size: 14px;
+}
+
+.landing-page-content .team-expertise-content .team-expertise-card li {
+	list-style-type: disc;
+	margin-left: 15px;
+}
+
+.landing-page-content .team-expertise-content .have-questions {
+	margin-top: 0px;
+	/*justify-content: center;*/
+}
+
+.landing-page-content .team-expertise-content .have-questions .have-questions-text {
+	margin-right: 20%;
+}
 
 
 
