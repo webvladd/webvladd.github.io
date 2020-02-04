@@ -11,8 +11,16 @@
   src: local("NunitoSans-Bold"), url("../fonts/NunitoSans-Bold.ttf");
 }
 
+@font-face {
+  font-family: "NunitoSans-Italic";
+  src: url("../fonts/NunitoSans-Italic.eot");
+  src: local("NunitoSans-Italic"), url("../fonts/NunitoSans-Italic.ttf");
+}
+
 /*=========END FONTS==========*/
 
 /*"NunitoSans-Bold", sans-serif;*/
 
 /*"NunitoSans-Regular", sans-serif;*/
+
+/*"NunitoSans-Italic", sans-serif;*/
