@@ -113,7 +113,8 @@ img {
 .landing-page-content .solutions-block,
 .landing-page-content .macro-regimes-monitor-block,
 .landing-page-content .insights-videos-block,
-.landing-page-content .blog-block {
+.landing-page-content .blog-block,
+.landing-page-content .about-us-block {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -162,7 +163,8 @@ img {
 .landing-page-content .solutions-content,
 .landing-page-content .macro-regimes-monitor-content,
 .landing-page-content .insights-videos-content,
-.landing-page-content .blog-content {
+.landing-page-content .blog-content,
+.landing-page-content .about-us-content {
 	display: flex;
 	width: 100%;
 	align-items: center;
@@ -451,6 +453,63 @@ img {
 .landing-page-content .blog-block .blog-content .blog-content-right button:hover {
 	opacity: 0.5;
 }
+
+.landing-page-content .about-us-block {
+	height: 50vh;
+}
+
+.landing-page-content .about-us-block .about-us-content {
+	flex-direction: column;
+}
+
+.landing-page-content .about-us-block .about-us-content > p {
+	text-align: center;
+	width: 100%;
+}
+
+.landing-page-content .about-us-block .about-us-content .about-us-description {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+.landing-page-content .about-us-block .about-us-content .about-us-person {
+	width: 138px;
+}
+
+.landing-page-content .about-us-block .about-us-content .about-us-person span {
+	font-family: "NunitoSans-Bold", sans-serif;
+	font-size: 20px;
+	text-align: center;
+	display: inline-block;
+	width: 100%;
+}
+
+.landing-page-content .about-us-block .about-us-content .about-us-person p {
+	font-family: "NunitoSans-Regular", sans-serif;
+	font-size: 16px;
+	text-align: center;
+}
+
+.landing-page-content .about-us-block .about-us-content .about-us-list ul {
+	margin-left: 30px;
+	line-height: 30px;
+	font-family: "NunitoSans-Regular", sans-serif;
+	font-size: 16px;
+}
+
+.landing-page-content .about-us-block .about-us-content .about-us-list li {
+	list-style-type: disc;
+}
+
+.landing-page-content .about-us-block .about-us-content .about-us-list a {
+	color: #1758b4;
+}
+
+
+
 
 
 
