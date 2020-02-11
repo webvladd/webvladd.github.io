@@ -7,6 +7,48 @@ img {
 	width: 100%;
 }
 
+/*====== SLIDER ======*/
+.slick-prev:before
+{
+    /*content: '←';*/
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../img/icons/strelka-vlevo.svg) no-repeat;
+    position: relative;
+    left: -5px;
+    /*margin-right: 5px;*/
+}
+
+.slick-next:before
+{
+    /*content: '→';*/
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../img/icons/strelka-vpravo.svg) no-repeat;
+    /*margin-left: 5px;*/
+}
+
+.slick-dots li button:before {
+	font-size: 35px;
+	/*color: #1C4177;*/
+	/*background: #1C4177;*/
+}
+
+.slick-dots li.slick-active button:before {
+	color: #1C4177;
+}
+
+/*.slick-dots li button {
+	border: solid 1px #5179B1;
+  border-radius: 50%;
+}*/
+
+/*==== END SLIDER ====*/
+
 .landing-page-wrapper {
 	max-width: 1920px;
 	width: 100%;
@@ -177,7 +219,9 @@ img {
 .landing-page-content .predictive-risk-management-content .prm-content-slider,
 .landing-page-content .credit-monitor-content .cm-content-slider,
 .landing-page-content .macro-regimes-monitor-content .mrm-content-slider {
-	width: 100%;
+	/*width: 100%;*/
+	/*width: 50%;*/
+	width: 35%;
 }
 
 .landing-page-content .predictive-risk-management-content .prm-content-slider img{
