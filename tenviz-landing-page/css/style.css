@@ -1,4 +1,4 @@
-CSS Document*/
+/*CSS Document*/*/
 a:hover {
 	opacity: 0.5;
 }
@@ -8,116 +8,76 @@ img {
 }
 
 /*====== SLIDER ======*/
-.slick-prev:before
-{
-    /*content: '←';*/
-    content: "";
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background: url(../img/icons/strelka-vlevo.svg) no-repeat;
-    position: relative;
-    left: -5px;
-    /*margin-right: 5px;*/
+.slick-prev:before {
+	position: relative;
+	left: -5px;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	content: '';
+	background: url(../img/icons/strelka-vlevo.svg) no-repeat;
 }
 
-.slick-next:before
-{
-    /*content: '→';*/
-    content: "";
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background: url(../img/icons/strelka-vpravo.svg) no-repeat;
-    /*margin-left: 5px;*/
+.slick-next:before {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	content: '';
+	background: url(../img/icons/strelka-vpravo.svg) no-repeat;
 }
 
 .slick-dots li button:before {
 	font-size: 35px;
-	/*color: #1C4177;*/
-	/*background: #1C4177;*/
 }
 
 .slick-dots li.slick-active button:before {
-	color: #1C4177;
+	color: #1c4177;
 }
-
-/*.slick-dots li button {
-	border: solid 1px #5179B1;
-  border-radius: 50%;
-}*/
-
-/***********slide setup*************/
-/*.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm1 {
-	height: 40vh;
-	background: url(../img/slider-img/predictive-risk-management/prm1.png) no-repeat 50% 0%;
-}
-
-.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm2 {
-	height: 40vh;
-	background: url(../img/slider-img/predictive-risk-management/prm2.png) no-repeat 50% 50%;
-	background-size: contain;
-}*/
-
-/*.landing-page-content .credit-monitor-content .cm-content-slider .cm-content-slide-cm1 {
-	height: 30vh;
-	background: url(../img/slider-img/credit-monitor/cm1.png) no-repeat 50% 50%;
-	background-size: contain;
-}
-
-.landing-page-content .credit-monitor-content .cm-content-slider .cm-content-slide-cm2 {
-	height: 30vh;
-	background: url(../img/slider-img/credit-monitor/cm2.png) no-repeat 50% 50%;
-	background-size: contain;
-}*/
-
-/*********end slide setup***********/
-
 /*==== END SLIDER ====*/
 
 .landing-page-wrapper {
-	max-width: 1920px;
 	width: 100%;
+	max-width: 1920px;
 	margin: 0 auto;
 }
 
 .landing-page-wrapper header {
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	box-sizing: border-box;
 	width: 100%;
 	height: 75px;
-	background-color: #376092;
-	box-shadow: 0 3px 5px rgba(0,0,0,0.1);
 	padding-right: 60px;
 	padding-left: 60px;
-	box-sizing: border-box;
+	background-color: #376092;
+	box-shadow: 0 3px 5px rgba(0,0,0,.1);
+	align-items: center;
+	justify-content: space-between;
 }
 
 .landing-page-wrapper header a.logo {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 28px;
-	color: #ffffff;
+	color: #fff;
 }
 
 .landing-page-wrapper header nav.lp-header-nav {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #ffffff;
-	max-width: 1100px;
+	font-family: 'NunitoSans-Regular', sans-serif;
+	display: flex;
 	width: 100%;
 	min-width: 750px;
-	display: flex;
+	max-width: 1100px;
+	color: #fff;
 	justify-content: space-between;
 }
 
 .landing-page-wrapper header nav.lp-header-nav a {
-	color: #ffffff;
 	box-sizing: border-box;
+	color: #fff;
 	border-bottom: solid 1px transparent;
 }
 
 .landing-page-wrapper header nav.lp-header-nav a:hover {
-	border-bottom: solid 1px #ffffff;
+	border-bottom: solid 1px #fff;
 }
 
 .landing-page-wrapper .landing-page-content {
@@ -131,24 +91,24 @@ img {
 	flex-direction: column;
 	width: 100%;
 	height: calc(100vh - 75px);
-	background: url(../img/Notebook2.jpg) no-repeat;
-	background-size: cover;
+	padding-top: 150px;
 	padding-right: 60px;
 	padding-left: 60px;
-	padding-top: 150px;
+	background: url(../img/Notebook2.jpg) no-repeat;
+	background-size: cover;
 }
 
 .landing-page-content .lp-banner-top .banner-top-text {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #ffffff;
+	font-family: 'NunitoSans-Regular', sans-serif;
+	color: #fff;
 }
 
 .landing-page-content .lp-banner-top .banner-top-text h1 {
 	font-size: 46px;
-	margin-top: 80px;
-	margin-bottom: 35px;
 	width: 100%;
 	max-width: 800px;
+	margin-top: 80px;
+	margin-bottom: 35px;
 }
 
 .landing-page-content .lp-banner-top .banner-top-text h2 {
@@ -158,21 +118,21 @@ img {
 }
 
 .landing-page-content .lp-banner-top .banner-top-btn {
-	margin-top: 10px;
 	display: flex;
-	justify-content: space-between;
 	width: 100%;
 	max-width: 570px;
+	margin-top: 10px;
+	justify-content: space-between;
 }
 
 .landing-page-content .lp-banner-top .banner-top-btn a {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #ffffff;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 18px;
-	background: #376092;
-	padding: 10px 25px;
 	box-sizing: border-box;
+	padding: 10px 25px;
+	color: #fff;
 	border-radius: 5px;
+	background: #376092;
 }
 
 .landing-page-content .alpha-generation-block,
@@ -186,26 +146,18 @@ img {
 .landing-page-content .team-expertise-block {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	padding-right: 60px;
-	padding-left: 60px;
+	box-sizing: border-box;
 	width: 100%;
 	height: 100vh;
-	box-sizing: border-box;
+	padding-right: 60px;
+	padding-left: 60px;
+	align-items: center;
 }
 
 .landing-page-content .predictive-risk-management-block {
 	background-color: #e6e6e6;
-	box-shadow: 0 20px 20px rgba(0,0,0,0.1);
+	box-shadow: 0 20px 20px rgba(0,0,0,.1);
 }
-
-/*.landing-page-content .predictive-risk-management-block {
-	height: 100vh;
-}
-
-.landing-page-content .credit-monitor-block {
-	height: 40vh;
-}*/
 
 .title-block {
 	box-sizing: border-box;
@@ -213,17 +165,17 @@ img {
 }
 
 .title-block h3 {
-	text-align: center;
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 34px;
+	text-align: center;
+	color: #376092;
 }
 
 .title-block p {
-	text-align: center;
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 22px;
+	text-align: center;
+	color: #376092;
 }
 
 .landing-page-content .alpha-generation-content,
@@ -252,10 +204,6 @@ img {
 .landing-page-content .predictive-risk-management-content .prm-content-slider img {
 	width: auto;
 	margin: 0 auto;
-	/*position: absolute;
-	top: 50%;
-	right: 50%;
-	transform: translate(50%, -50%);*/
 }
 
 .landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm2 img {
@@ -269,8 +217,8 @@ img {
 .landing-page-content .predictive-risk-management-content .prm-content-text,
 .landing-page-content .credit-monitor-content .cm-content-text,
 .landing-page-content .macro-regimes-monitor-content .mrm-content-text {
-	font-family: "NunitoSans-Regular", sans-serif;
-	font-size: 22px;
+	font-family: 'NunitoSans-Regular', sans-serif;
+	font-size: 22px; 
 	width: 50%;
 }
 
@@ -292,15 +240,15 @@ img {
 }
 
 .landing-page-content .predictive-risk-management-content .prm-second-paragraph span {
+	font-family: 'NunitoSans-Bold', sans-serif;
 	margin-bottom: 10px;
-	font-family: "NunitoSans-Bold", sans-serif;
 }
 
 .landing-page-content .credit-monitor-content .cm-content-text span {
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: 'NunitoSans-Bold', sans-serif;
+	display: inline-block;
 	margin-top: 20px;
 	margin-bottom: 10px;
-	display: inline-block;
 }
 
 .landing-page-content .credit-monitor-content .cm-content-text ul {
@@ -311,18 +259,6 @@ img {
 .landing-page-content .credit-monitor-content .cm-content-text li {
 	list-style-type: disc;
 }
-
-/*.landing-page-content .credit-monitor-content img {
-	height: 245px;
-}*/
-
-/*.landing-page-content .credit-monitor-content .cm-content-slider {
-	height: 80vh;
-}
-
-.landing-page-content .credit-monitor-content .cm-content-slider .cm-content-slide-cm1 {
-	height: 
-}*/
 
 .landing-page-content .credit-monitor-content .cm-content-slider img {
 	width: auto;
@@ -337,32 +273,32 @@ img {
 .landing-page-content .solutions-content .solutions-card-group,
 .landing-page-content .team-expertise-content .team-expertise-card-group {
 	display: flex;
-	justify-content: space-between;
 	width: 100%;
 	max-width: 1100px;
+	justify-content: space-between;
 }
 
 .landing-page-content .solutions-content .solutions-card,
 .landing-page-content .team-expertise-content .team-expertise-card {
-	max-width: 260px;
-	width: 100%;
-	height: 230px;
-	box-shadow: 0 0px 10px rgba(0,0,0,0.1);
-	padding: 10px;
 	box-sizing: border-box;
+	width: 100%;
+	max-width: 260px;
+	height: 230px;
+	padding: 10px;
 	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
 
 .landing-page-content .solutions-content .solutions-card .solutions-card-title {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 18px;
+	color: #376092;
 }
 
 .landing-page-content .solutions-content .solutions-card .solutions-card-text {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 14px;
+	color: #376092;
 }
 
 .landing-page-content .solutions-content .solutions-card .solutions-card-icon {
@@ -376,28 +312,28 @@ img {
 }
 
 .landing-page-content .solutions-content .solutions-card .solutions-card-text {
-	text-align: center;
 	margin-top: 25px;
+	text-align: center;
 }
 
 .landing-page-content .solutions-content .how-it-works,
 .landing-page-content .team-expertise-content .have-questions {
 	display: flex;
+	box-sizing: border-box;
 	width: 100%;
+	margin-top: 175px;
+	padding: 10px 15px;
+	border: solid 1px #cbd4dd;
+	background-color: #eaf3fa;
 	justify-content: center;
 	align-items: center;
-	background-color: #eaf3fa;
-	border: solid 1px #cbd4dd;
-	padding: 10px 15px;
-	box-sizing: border-box;
-	margin-top: 175px;
 }
 
 .landing-page-content .solutions-content .how-it-works .how-it-works-text,
 .landing-page-content .team-expertise-content .have-questions .have-questions-text {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #1a6899;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	margin-right: 5%;
+	color: #1a6899;
 }
 
 .landing-page-content .solutions-content .how-it-works .how-it-works-text span,
@@ -411,15 +347,15 @@ img {
 
 .landing-page-content .solutions-content .how-it-works a,
 .landing-page-content .team-expertise-content .have-questions a {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #1a6899;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 24px;
 	display: block;
-	white-space: nowrap;
-	background-color: #ffffff;
-	border: solid 1px #d6dadd;
-	padding: 10px 55px;
 	box-sizing: border-box;
+	padding: 10px 55px;
+	white-space: nowrap;
+	color: #1a6899;
+	border: solid 1px #d6dadd;
+	background-color: #fff;
 }
 
 .macro-regimes-monitor-content .mrm-content-text > p {
@@ -427,14 +363,14 @@ img {
 }
 
 .macro-regimes-monitor-content .mrm-content-text span {
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: 'NunitoSans-Bold', sans-serif;
 }
 
 .macro-regimes-monitor-content .mrm-content-text > span {
-	margin-bottom: 20px;
 	display: inline-block;
-	padding-left: 10%;
 	box-sizing: border-box;
+	margin-bottom: 20px;
+	padding-left: 10%;
 	text-decoration: underline;
 }
 
@@ -445,8 +381,8 @@ img {
 
 .macro-regimes-monitor-content .mrm-content-text ul li {
 	display: flex;
-	align-items: center;
 	margin-bottom: 15px;
+	align-items: center;
 }
 
 .macro-regimes-monitor-content .mrm-content-text ul li > img {
@@ -470,55 +406,55 @@ img {
 
 .landing-page-content .blog-block .blog-content {
 	display: flex;
+	width: 100%;
 	align-items: center;
 	justify-content: space-between;
-	width: 100%;
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-center span {
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: 'NunitoSans-Bold', sans-serif;
 	font-size: 14px;
 	text-decoration: underline;
 	color: #1758b4;
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-center p {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 14px;
-	color: #1758b4;
-	text-decoration: underline;
-	margin-bottom: 34px;
 	margin-top: 5px;
+	margin-bottom: 34px;
+	text-decoration: underline;
+	color: #1758b4;
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-center a {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 18px;
-	color: #1758b4;
-	text-decoration: underline;
 	display: flex;
+	text-decoration: underline;
+	color: #1758b4;
 	align-items: center;
 }
 
-.landing-page-content .blog-block .blog-content .blog-content-center a i{
-	background: url(../img/icons/arrow-right-mobile.svg) no-repeat 0px 3px;
+.landing-page-content .blog-block .blog-content .blog-content-center a i {
 	width: 30px;
 	height: 12px;
 	margin-left: 5px;
+	background: url(../img/icons/arrow-right-mobile.svg) no-repeat 0 3px;
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-right {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-right p {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 16px;
-	color: #1758b4;
 	margin-bottom: 14px;
+	color: #1758b4;
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-right form {
@@ -527,34 +463,34 @@ img {
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-right input {
-	padding: 12px 15px;
 	box-sizing: border-box;
+	padding: 12px 15px;
+	color: #a0a4a7;
 	border: none;
 	outline: none;
-	color: #a0a4a7;
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-right button {
-	background-color: #0470bb;
+	display: flex;
 	width: 50px;
 	height: 39px;
-	border: none;
 	cursor: pointer;
-	display: flex;
+	border: none;
+	background-color: #0470bb;
 	justify-content: center;
 	align-items: center;
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-right button:before {
-	content: "";
 	display: block;
-	background: url(../img/icons/paper-plane.svg) no-repeat;
 	width: 20px;
 	height: 20px;
+	content: '';
+	background: url(../img/icons/paper-plane.svg) no-repeat;
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-right button:hover {
-	opacity: 0.5;
+	opacity: .5;
 }
 
 .landing-page-content .about-us-block,
@@ -567,16 +503,16 @@ img {
 }
 
 .landing-page-content .about-us-block .about-us-content > p {
-	text-align: center;
 	width: 100%;
+	text-align: center;
 }
 
 .landing-page-content .about-us-block .about-us-content .about-us-description {
 	display: flex;
-	align-items: center;
-	justify-content: center;
 	width: 100%;
 	height: 100%;
+	align-items: center;
+	justify-content: center;
 }
 
 .landing-page-content .about-us-block .about-us-content .about-us-person {
@@ -584,24 +520,24 @@ img {
 }
 
 .landing-page-content .about-us-block .about-us-content .about-us-person span {
-	font-family: "NunitoSans-Bold", sans-serif;
+	font-family: 'NunitoSans-Bold', sans-serif;
 	font-size: 20px;
-	text-align: center;
 	display: inline-block;
 	width: 100%;
+	text-align: center;
 }
 
 .landing-page-content .about-us-block .about-us-content .about-us-person p {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 16px;
 	text-align: center;
 }
 
 .landing-page-content .about-us-block .about-us-content .about-us-list ul {
-	margin-left: 30px;
-	line-height: 30px;
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 16px;
+	line-height: 30px;
+	margin-left: 30px;
 }
 
 .landing-page-content .about-us-block .about-us-content .about-us-list li {
@@ -614,10 +550,10 @@ img {
 
 .landing-page-content .team-expertise-content {
 	flex-direction: column;
-	height: 100%;
-	justify-content: space-between;
-	padding-top: 20px;
 	box-sizing: border-box;
+	height: 100%;
+	padding-top: 20px;
+	justify-content: space-between;
 }
 
 .landing-page-content .team-expertise-content .team-expertise-card-group {
@@ -625,32 +561,32 @@ img {
 }
 
 .landing-page-content .team-expertise-content .team-expertise-card {
-	margin-left: 20px;
-	margin-right: 20px;
-	padding: 15px;
 	box-sizing: border-box;
+	margin-right: 20px;
+	margin-left: 20px;
+	padding: 15px;
 }
 
 .landing-page-content .team-expertise-content .team-expertise-card span {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 16px;
-	color: #376092;
 	display: inline-block;
 	margin-bottom: 10px;
+	color: #376092;
 }
 
 .landing-page-content .team-expertise-content .team-expertise-card ul {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 14px;
 }
 
 .landing-page-content .team-expertise-content .team-expertise-card li {
-	list-style-type: disc;
 	margin-left: 15px;
+	list-style-type: disc;
 }
 
 .landing-page-content .team-expertise-content .have-questions {
-	margin-top: 0px;
+	margin-top: 0;
 }
 
 .landing-page-content .team-expertise-content .have-questions .have-questions-text {
@@ -658,19 +594,19 @@ img {
 }
 
 .landing-page-wrapper footer {
+	display: flex;
+	box-sizing: border-box;
 	width: 100%;
 	height: 50px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: #a6a6a6;
 	padding-right: 60px;
 	padding-left: 60px;
-	box-sizing: border-box;
+	background-color: #a6a6a6;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .landing-page-wrapper footer .copyright {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
 }
 
@@ -684,17 +620,17 @@ img {
 }
 
 .landing-page-wrapper footer .telephone-email a {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
 	display: flex;
+	color: #376092;
 	align-items: center;
 }
 
 .landing-page-wrapper footer .telephone-email a i {
+	display: inline-block;
 	width: 20px;
 	height: 20px;
-	display: inline-block;
 	margin-right: 15px;
 }
 
@@ -713,12 +649,12 @@ img {
 }
 
 .landing-page-wrapper footer .social-networks a {
+	display: block;
 	width: 20px;
 	height: 20px;
-	display: block;
-	background-size: contain;
-	margin-left: 5px;
 	margin-right: 5px;
+	margin-left: 5px;
+	background-size: contain;
 }
 
 .landing-page-wrapper footer .social-networks-linkedin {
@@ -730,8 +666,8 @@ img {
 }
 
 .landing-page-wrapper footer .social-networks-twitter {
-	background: url(../img/icons/Twitter_bird_logo.svg) no-repeat 0px 2px;
-	background-color: #41ABE1;
+	background: url(../img/icons/Twitter_bird_logo.svg) no-repeat 0 2px;
+	background-color: #41abe1;
 }
 
 /*============FORM form-sign-up-now===============*/
@@ -1169,9 +1105,6 @@ img {
 	background-size: contain;
 }
 /*============END FORM get-in-touch-with-us-wrapper===============*/
-
-
-
 
 /*======RESPONSIVE======*/
 
