@@ -47,6 +47,35 @@ img {
   border-radius: 50%;
 }*/
 
+/***********slide setup*************/
+.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm1 {
+	height: 40vh;
+	background: url(../img/slider-img/predictive-risk-management/prm1.png) no-repeat 50% 0%;
+}
+
+.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm2 {
+	height: 40vh;
+	background: url(../img/slider-img/predictive-risk-management/prm2.png) no-repeat 50% 50%;
+	/*background-size: 84%;*/
+	background-size: contain;
+}
+
+.landing-page-content .credit-monitor-content .cm-content-slider .cm-content-slide-cm1 {
+	height: 30vh;
+	background: url(../img/slider-img/credit-monitor/cm1.png) no-repeat 50% 50%;
+	/*background-size: 47%;*/
+	background-size: contain;
+}
+
+.landing-page-content .credit-monitor-content .cm-content-slider .cm-content-slide-cm2 {
+	height: 30vh;
+	background: url(../img/slider-img/credit-monitor/cm2.png) no-repeat 50% 50%;
+	/*background-size: 65%;*/
+	background-size: contain;
+}
+
+/*********end slide setup***********/
+
 /*==== END SLIDER ====*/
 
 .landing-page-wrapper {
@@ -213,6 +242,7 @@ img {
 	width: 100%;
 	align-items: center;
 	flex-grow: 1;
+	justify-content: space-between;
 }
 
 .landing-page-content .alpha-generation-content .ag-content-slider,
@@ -221,12 +251,23 @@ img {
 .landing-page-content .macro-regimes-monitor-content .mrm-content-slider {
 	/*width: 100%;*/
 	/*width: 50%;*/
-	width: 35%;
+	width: 45%;
 }
 
-.landing-page-content .predictive-risk-management-content .prm-content-slider img{
+/*.landing-page-content .predictive-risk-management-content .prm-content-slider img{
 	max-height: 440px;
+}*/
+
+/*.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm1 {
+	height: 40vh;
+	background: url(../img/slider-img/predictive-risk-management/prm1.png) no-repeat 50% 0%;
 }
+
+.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm2 {
+	height: 40vh;
+	background: url(../img/slider-img/predictive-risk-management/prm2.png) no-repeat 50% 50%;
+	background-size: 84%;
+}*/
 
 .landing-page-content .alpha-generation-content .ag-content-text,
 .landing-page-content .predictive-risk-management-content .prm-content-text,
@@ -234,7 +275,7 @@ img {
 .landing-page-content .macro-regimes-monitor-content .mrm-content-text {
 	font-family: "NunitoSans-Regular", sans-serif;
 	font-size: 22px;
-	width: 100%;
+	width: 50%;
 }
 
 .landing-page-content .alpha-generation-content .ag-content-text p {
