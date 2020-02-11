@@ -1,4 +1,4 @@
-/*CSS Document*/
+CSS Document*/
 a:hover {
 	opacity: 0.5;
 }
@@ -48,7 +48,7 @@ img {
 }*/
 
 /***********slide setup*************/
-.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm1 {
+/*.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm1 {
 	height: 40vh;
 	background: url(../img/slider-img/predictive-risk-management/prm1.png) no-repeat 50% 0%;
 }
@@ -56,23 +56,20 @@ img {
 .landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm2 {
 	height: 40vh;
 	background: url(../img/slider-img/predictive-risk-management/prm2.png) no-repeat 50% 50%;
-	/*background-size: 84%;*/
 	background-size: contain;
-}
+}*/
 
-.landing-page-content .credit-monitor-content .cm-content-slider .cm-content-slide-cm1 {
+/*.landing-page-content .credit-monitor-content .cm-content-slider .cm-content-slide-cm1 {
 	height: 30vh;
 	background: url(../img/slider-img/credit-monitor/cm1.png) no-repeat 50% 50%;
-	/*background-size: 47%;*/
 	background-size: contain;
 }
 
 .landing-page-content .credit-monitor-content .cm-content-slider .cm-content-slide-cm2 {
 	height: 30vh;
 	background: url(../img/slider-img/credit-monitor/cm2.png) no-repeat 50% 50%;
-	/*background-size: 65%;*/
 	background-size: contain;
-}
+}*/
 
 /*********end slide setup***********/
 
@@ -202,13 +199,13 @@ img {
 	box-shadow: 0 20px 20px rgba(0,0,0,0.1);
 }
 
-.landing-page-content .predictive-risk-management-block {
-	height: 60vh;
+/*.landing-page-content .predictive-risk-management-block {
+	height: 100vh;
 }
 
 .landing-page-content .credit-monitor-block {
 	height: 40vh;
-}
+}*/
 
 .title-block {
 	box-sizing: border-box;
@@ -249,25 +246,24 @@ img {
 .landing-page-content .predictive-risk-management-content .prm-content-slider,
 .landing-page-content .credit-monitor-content .cm-content-slider,
 .landing-page-content .macro-regimes-monitor-content .mrm-content-slider {
-	/*width: 100%;*/
-	/*width: 50%;*/
 	width: 45%;
 }
 
-/*.landing-page-content .predictive-risk-management-content .prm-content-slider img{
-	max-height: 440px;
-}*/
-
-/*.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm1 {
-	height: 40vh;
-	background: url(../img/slider-img/predictive-risk-management/prm1.png) no-repeat 50% 0%;
+.landing-page-content .predictive-risk-management-content .prm-content-slider img {
+	width: auto;
+	margin: 0 auto;
+	/*position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);*/
 }
 
-.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm2 {
-	height: 40vh;
-	background: url(../img/slider-img/predictive-risk-management/prm2.png) no-repeat 50% 50%;
-	background-size: 84%;
-}*/
+.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm2 img {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	transform: translate(50%, -50%);
+}
 
 .landing-page-content .alpha-generation-content .ag-content-text,
 .landing-page-content .predictive-risk-management-content .prm-content-text,
@@ -316,8 +312,21 @@ img {
 	list-style-type: disc;
 }
 
-.landing-page-content .credit-monitor-content img {
+/*.landing-page-content .credit-monitor-content img {
 	height: 245px;
+}*/
+
+/*.landing-page-content .credit-monitor-content .cm-content-slider {
+	height: 80vh;
+}
+
+.landing-page-content .credit-monitor-content .cm-content-slider .cm-content-slide-cm1 {
+	height: 
+}*/
+
+.landing-page-content .credit-monitor-content .cm-content-slider img {
+	width: auto;
+	margin: 0 auto;
 }
 
 .landing-page-content .solutions-content {
@@ -1170,4 +1179,4 @@ img {
 	
 }
 
-/*====END RESPONSIVE====*/
+/*====END RESPONSIVE====
