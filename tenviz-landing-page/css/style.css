@@ -162,8 +162,8 @@ img {
 	box-sizing: border-box;
 	width: 100%;
 	height: calc(100vh - 75px);
-	padding-right: 60px;
-	padding-left: 60px;
+	padding-right: 150px;
+	padding-left: 150px;
 	align-items: center;
 	background: #ffffff;
 	position: relative;
@@ -216,6 +216,8 @@ img {
 .landing-page-content .credit-monitor-content .cm-content-slider,
 .landing-page-content .macro-regimes-monitor-content .mrm-content-slider {
 	width: 45%;
+	/*box-shadow: 0 0 20px rgba(247,247,247,.3);*/
+	/*background: #ffffff;*/
 }
 
 .landing-page-content .predictive-risk-management-content .prm-content-slider img {
@@ -284,6 +286,11 @@ img {
 .landing-page-content .credit-monitor-content .cm-content-slider img {
 	width: auto;
 	margin: 0 auto;
+}
+
+.landing-page-content .solutions-block {
+	padding-left: 0px;
+	padding-right: 0px;
 }
 
 .landing-page-content .solutions-content {
@@ -421,8 +428,10 @@ img {
 }
 
 .landing-page-content .blog-block {
-	height: 40vh;
+	/*height: 40vh;*/
+	height: auto;
 	background-color: #eaf3fa;
+	padding-bottom: 50px;
 }
 
 .landing-page-content .blog-block .blog-content {
@@ -430,6 +439,16 @@ img {
 	width: 100%;
 	align-items: center;
 	justify-content: space-between;
+	/*justify-content: center;*/
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-center {
+	display: flex;
+	align-items: center;
+}
+
+.landing-page-content .blog-block .blog-content .blog-content-center > div {
+	margin-right: 20px;
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-center span {
@@ -519,6 +538,7 @@ img {
 	height: 50vh;
 }
 
+
 .landing-page-content .about-us-block .about-us-content {
 	flex-direction: column;
 }
@@ -567,6 +587,11 @@ img {
 
 .landing-page-content .about-us-block .about-us-content .about-us-list a {
 	color: #1758b4;
+}
+
+.landing-page-content .team-expertise-block {
+	padding-right: 0;
+	padding-left: 0;
 }
 
 .landing-page-content .team-expertise-content {
