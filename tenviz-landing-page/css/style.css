@@ -52,6 +52,10 @@ img {
 	box-shadow: 0 3px 5px rgba(0,0,0,.1);
 	align-items: center;
 	justify-content: space-between;
+
+	 position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .landing-page-wrapper header a.logo {
@@ -96,6 +100,10 @@ img {
 	padding-left: 60px;
 	background: url(../img/Notebook2.jpg) no-repeat;
 	background-size: cover;
+
+	position: sticky;
+	top: 75px;
+	z-index: -1;
 }
 
 .landing-page-content .lp-banner-top .banner-top-text {
@@ -148,11 +156,19 @@ img {
 	flex-direction: column;
 	box-sizing: border-box;
 	width: 100%;
-	height: 100vh;
+	/*height: 100vh;*/
+	height: calc(100vh - 75px);
 	padding-right: 60px;
 	padding-left: 60px;
 	align-items: center;
+	background: #ffffff;
 }
+
+/*.landing-page-content .alpha-generation-block {
+	position: sticky;
+	top: 0;
+}*/
+
 
 .landing-page-content .predictive-risk-management-block {
 	background-color: #e6e6e6;
