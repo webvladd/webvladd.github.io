@@ -161,7 +161,6 @@ img {
 	flex-direction: column;
 	box-sizing: border-box;
 	width: 100%;
-	/*height: 100vh;*/
 	height: calc(100vh - 75px);
 	padding-right: 60px;
 	padding-left: 60px;
@@ -170,12 +169,6 @@ img {
 	position: relative;
 	z-index: 1;
 }
-
-/*.landing-page-content .alpha-generation-block {
-	position: sticky;
-	top: 0;
-}*/
-
 
 .landing-page-content .predictive-risk-management-block {
 	background-color: #e6e6e6;
@@ -1073,11 +1066,41 @@ img {
 /*============END FORM contact-us-wrapper===============*/
 
 /*============FORM get-in-touch-with-us-wrapper===============*/
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.form-get-in-touch-with-us-section {
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(74, 72, 69, 0.5);
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+}
+
 .form-get-in-touch-with-us-wrapper {
 	max-width: 475px;
 	border: solid 1px #e7e5e6;
 	background-color: #eaf3fa;
 	box-shadow: 0 0 50px rgba(0,0,0,.1);
+
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.form-get-in-touch-with-us-btn-close {
+	width: 30px;
+	height: 30px;
+	background: url(../img/icons/windowclose_104378.svg) no-repeat 50%, 50%;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	background-size: cover;
+	margin-left: 100%;
+}
+
+.form-get-in-touch-with-us-btn-close:hover {
+	opacity: 0.5;
 }
 
 .form-get-in-touch-with-us {

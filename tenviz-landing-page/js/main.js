@@ -4,18 +4,25 @@ $(document).on('ready', function() {
 	let $landingPageContainer = $('body');
 	let $lpHeaderNav = $landingPageContainer.find('.lp-header-nav');
 	let $lpHeaderNavLogin = $lpHeaderNav.find('.lp-header-nav-login');
+
 	//***form-sign-up-now***
 	let $formSignUpNow = $landingPageContainer.find('.form-sign-up-now-section');
 	let $formSignUpNowBtnClose = $formSignUpNow.find('.form-sign-up-now-btn-close');
 	let $startFreeTrialBtnBannerTop = $landingPageContainer.find('.banner-top-btn .start-free-trial-btn');
 	let $formSignUpNowSignInBtn = $formSignUpNow.find('.form-sign-up-now .sign-in-btn');
 	//***end form-sign-up-now***
+
 	//***form-sign-in-to-tenviz***
 	let $formSignTenviz = $landingPageContainer.find('.form-sign-in-to-tenviz-section');
 	let $formSignTenvizBtnClose = $formSignTenviz.find('.form-sign-in-to-tenviz-btn-close');
 	let $formSignTenvizHereBtn = $formSignTenviz.find('.form-sign-in-to-tenviz .form-sign-in-to-tenviz-here-btn');
-	console.log($formSignTenvizHereBtn)
 	//***end form-sign-in-to-tenviz***
+
+	//***form-get-in-touch-with-us***
+	let $formGetInTouchWithUs = $landingPageContainer.find('.form-get-in-touch-with-us-section');
+	let $formGetInTouchWithUsBtnClose = $formGetInTouchWithUs.find('.form-get-in-touch-with-us-btn-close');
+	let $formGetInTouchWithUsBtnOpen = $landingPageContainer.find('.form-get-in-touch-with-us-btn-open');
+	//***end form-get-in-touch-with-us***
 	//***END DOM ELEMENTS****
 
 	//******EVENT********
@@ -57,26 +64,29 @@ $(document).on('ready', function() {
 	});
 	//***end form-sign-in-to-tenviz event***
 
+	//***form-get-in-touch-with-us***
+	$formGetInTouchWithUsBtnClose.click(function(e) {
+		$formGetInTouchWithUs.addClass('hidden');
+	});
+
+	$formGetInTouchWithUsBtnOpen.click(function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		$formGetInTouchWithUs.removeClass('hidden');
+	});
+	//***end form-get-in-touch-with-us***
 	//******END EVENT********
 
 	//*****Smooth scrolling to the anchor*****
 	var $page = $('html, body');
 	$('.lp-header-nav a[href*="#"]').click(function(e) {
-		// console.log(e)
-		// // console.log(e.attr('href'))
-		// console.log(this)
-		// console.log(e.target)
-		console.log(e.target.dataset.class)
-		// console.log(e.target.attr('href'))
-		// console.log(e.currentTarget)
-		// console.log(e.currentTarget.attr('href'))
-		if(e.target.dataset.class !== 'lp-header-nav-login'){
+		if(e.target.dataset.class !== 'lp-header-nav-login' &&
+				e.target.dataset.class !== 'lp-header-nav-contact-us') {
 			$page.animate({
 				scrollTop: $($.attr(this, 'href')).offset().top -= $('header')[0].offsetHeight
 			}, 400);
 			return false;
 		};
-		
 	});
 	//***END Smooth scrolling to the anchor***
 
