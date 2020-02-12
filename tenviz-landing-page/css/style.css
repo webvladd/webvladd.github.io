@@ -673,8 +673,8 @@ img {
 /*============FORM form-sign-up-now===============*/
 .form-sign-up-now-wrapper {
 	max-width: 475px;
-	box-shadow: 0 0px 50px rgba(0,0,0,0.1);
 	border: solid 1px #e7e5e6;
+	box-shadow: 0 0 50px rgba(0,0,0,.1);
 }
 
 .form-sign-up-now {
@@ -684,28 +684,28 @@ img {
 }
 
 .form-sign-up-now .form-title {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 16px;
-	text-align: center;
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 .form-sign-up-now .form-title a {
-	color: #376092;
-	text-decoration: underline;
+	font-family: 'NunitoSans-Italic', sans-serif;
 	margin-left: 5px;
-	font-family: "NunitoSans-Italic", sans-serif;
+	text-decoration: underline;
+	color: #376092;
 }
 
-.form-sign-up-now input {
-	border: solid 1px #d9d9d9;
-	width: 205px;
-	font-family: "NunitoSans-Italic", sans-serif;
-	color: #376092;
+.form-sign-up-now input{
+	font-family: 'NunitoSans-Italic', sans-serif;
 	font-size: 12px;
-	padding: 6px 5px;
-	margin-bottom: 5px;
 	box-sizing: border-box;
+	width: 205px;
+	margin-bottom: 5px;
+	padding: 6px 5px;
+	color: #376092;
+	border: solid 1px #d9d9d9;
 }
 
 .form-sign-up-now input::placeholder {
@@ -719,32 +719,32 @@ img {
 }
 
 .form-sign-up-now .form-captcha p {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
 	text-align: center;
 }
 
 .form-sign-up-now .form-captcha a {
-	font-family: "NunitoSans-Italic", sans-serif;
-	color: #1758b4;
+	font-family: 'NunitoSans-Italic', sans-serif;
 	font-size: 12px;
+	color: #1758b4;
 }
 
 .form-sign-up-now button {
-	background: none;
-	border: solid 1px #d9d9d9;
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
-	text-align: center;
-	padding: 7px 30px;
 	box-sizing: border-box;
-	cursor: pointer;
 	margin-bottom: 40px;
+	padding: 7px 30px;
+	cursor: pointer;
+	text-align: center;
+	color: #376092;
+	border: solid 1px #d9d9d9;
+	background: none;
 }
 
 .form-sign-up-now button:hover {
-	opacity: 0.5;
+	opacity: .5;
 }
 
 .form-sign-up-now-wrapper {
@@ -757,17 +757,17 @@ img {
 }
 
 .form-sign-up-now-wrapper .telephone-email a {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
 	display: flex;
+	color: #376092;
 	align-items: center;
 }
 
 .form-sign-up-now-wrapper .telephone-email a i {
+	display: inline-block;
 	width: 20px;
 	height: 20px;
-	display: inline-block;
 	margin-right: 15px;
 }
 
@@ -785,8 +785,8 @@ img {
 /*============FORM form-sign-in-to-tenviz-wrapper===============*/
 .form-sign-in-to-tenviz-wrapper {
 	max-width: 475px;
-	box-shadow: 0 0px 50px rgba(0,0,0,0.1);
 	border: solid 1px #e7e5e6;
+	box-shadow: 0 0 50px rgba(0,0,0,.1);
 }
 
 .form-sign-in-to-tenviz {
@@ -796,28 +796,28 @@ img {
 }
 
 .form-sign-in-to-tenviz .form-title {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 16px;
-	text-align: center;
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 .form-sign-in-to-tenviz .form-title a {
-	color: #376092;
-	text-decoration: underline;
+	font-family: 'NunitoSans-Italic', sans-serif;
 	margin-left: 5px;
-	font-family: "NunitoSans-Italic", sans-serif;
+	text-decoration: underline;
+	color: #376092;
 }
 
 .form-sign-in-to-tenviz input {
-	border: solid 1px #d9d9d9;
-	width: 205px;
-	font-family: "NunitoSans-Italic", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Italic', sans-serif;
 	font-size: 12px;
-	padding: 6px 5px;
-	margin-bottom: 5px;
 	box-sizing: border-box;
+	width: 205px;
+	margin-bottom: 5px;
+	padding: 6px 5px;
+	color: #376092;
+	border: solid 1px #d9d9d9;
 }
 
 .form-sign-in-to-tenviz input::placeholder {
@@ -825,20 +825,20 @@ img {
 }
 
 .form-sign-in-to-tenviz button {
-	background: none;
-	border: solid 1px #d9d9d9;
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
-	text-align: center;
-	padding: 7px 30px;
 	box-sizing: border-box;
-	cursor: pointer;
 	margin-bottom: 40px;
+	padding: 7px 30px;
+	cursor: pointer;
+	text-align: center;
+	color: #376092;
+	border: solid 1px #d9d9d9;
+	background: none;
 }
 
 .form-sign-in-to-tenviz button:hover {
-	opacity: 0.5;
+	opacity: .5;
 }
 
 .form-sign-in-to-tenviz-wrapper {
@@ -851,17 +851,17 @@ img {
 }
 
 .form-sign-in-to-tenviz-wrapper .telephone-email a {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
 	display: flex;
+	color: #376092;
 	align-items: center;
 }
 
 .form-sign-in-to-tenviz-wrapper .telephone-email a i {
+	display: inline-block;
 	width: 20px;
 	height: 20px;
-	display: inline-block;
 	margin-right: 15px;
 }
 
@@ -879,9 +879,9 @@ img {
 /*============FORM contact-us-wrapper===============*/
 .form-contact-us-wrapper {
 	max-width: 475px;
-	box-shadow: 0 0px 50px rgba(0,0,0,0.1);
 	border: solid 1px #e7e5e6;
 	background-color: #eaf3fa;
+	box-shadow: 0 0 50px rgba(0,0,0,.1);
 }
 
 .form-contact-us {
@@ -891,25 +891,25 @@ img {
 }
 
 .form-contact-us .form-title {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 16px;
-	text-align: center;
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 .form-contact-us .form-title span {
-	font-family: "NunitoSans-Italic", sans-serif;
+	font-family: 'NunitoSans-Italic', sans-serif;
 }
 
 .form-contact-us input {
-	border: solid 1px #d9d9d9;
-	width: 205px;
-	font-family: "NunitoSans-Italic", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Italic', sans-serif;
 	font-size: 12px;
-	padding: 6px 5px;
-	margin-bottom: 5px;
 	box-sizing: border-box;
+	width: 205px;
+	margin-bottom: 5px;
+	padding: 6px 5px;
+	color: #376092;
+	border: solid 1px #d9d9d9;
 }
 
 .form-contact-us input::placeholder {
@@ -923,34 +923,34 @@ img {
 }
 
 .form-contact-us .form-captcha p {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
 	text-align: center;
 }
 
 .form-contact-us .form-captcha a {
-	font-family: "NunitoSans-Italic", sans-serif;
-	color: #1758b4;
+	font-family: 'NunitoSans-Italic', sans-serif;
 	font-size: 12px;
+	color: #1758b4;
 }
 
 .form-contact-us button {
-	background: none;
-	border: solid 1px #d9d9d9;
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
-	text-align: center;
-	padding: 7px 30px;
 	box-sizing: border-box;
-	cursor: pointer;
-	margin-bottom: 40px;
-	background: #ffffff;
 	margin-top: 15px;
+	margin-bottom: 40px;
+	padding: 7px 30px;
+	cursor: pointer;
+	text-align: center;
+	color: #376092;
+	border: solid 1px #d9d9d9;
+	background: none;
+	background: #fff;
 }
 
 .form-contact-us button:hover {
-	opacity: 0.5;
+	opacity: .5;
 }
 
 .form-contact-us-wrapper {
@@ -963,17 +963,17 @@ img {
 }
 
 .form-contact-us-wrapper .telephone-email a {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
 	display: flex;
+	color: #376092;
 	align-items: center;
 }
 
 .form-contact-us-wrapper .telephone-email a i {
+	display: inline-block;
 	width: 20px;
 	height: 20px;
-	display: inline-block;
 	margin-right: 15px;
 }
 
@@ -988,18 +988,12 @@ img {
 }
 /*============END FORM contact-us-wrapper===============*/
 
-
-
-
-
-
-
 /*============FORM get-in-touch-with-us-wrapper===============*/
 .form-get-in-touch-with-us-wrapper {
 	max-width: 475px;
-	box-shadow: 0 0px 50px rgba(0,0,0,0.1);
 	border: solid 1px #e7e5e6;
 	background-color: #eaf3fa;
+	box-shadow: 0 0 50px rgba(0,0,0,.1);
 }
 
 .form-get-in-touch-with-us {
@@ -1009,25 +1003,25 @@ img {
 }
 
 .form-get-in-touch-with-us .form-title {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 16px;
-	text-align: center;
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 .form-get-in-touch-with-us .form-title span {
-	font-family: "NunitoSans-Italic", sans-serif;
+	font-family: 'NunitoSans-Italic', sans-serif;
 }
 
 .form-get-in-touch-with-us input {
-	border: solid 1px #d9d9d9;
-	width: 205px;
-	font-family: "NunitoSans-Italic", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Italic', sans-serif;
 	font-size: 12px;
-	padding: 6px 5px;
-	margin-bottom: 5px;
 	box-sizing: border-box;
+	width: 205px;
+	margin-bottom: 5px;
+	padding: 6px 5px;
+	color: #376092;
+	border: solid 1px #d9d9d9;
 }
 
 .form-get-in-touch-with-us input::placeholder {
@@ -1041,34 +1035,34 @@ img {
 }
 
 .form-get-in-touch-with-us .form-captcha p {
-	font-family: "NunitoSans-Regular", sans-serif;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
 	text-align: center;
 }
 
 .form-get-in-touch-with-us .form-captcha a {
-	font-family: "NunitoSans-Italic", sans-serif;
-	color: #1758b4;
+	font-family: 'NunitoSans-Italic', sans-serif;
 	font-size: 12px;
+	color: #1758b4;
 }
 
 .form-get-in-touch-with-us button {
-	background: none;
-	border: solid 1px #d9d9d9;
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
-	text-align: center;
-	padding: 7px 30px;
 	box-sizing: border-box;
-	cursor: pointer;
-	margin-bottom: 40px;
-	background: #ffffff;
 	margin-top: 15px;
+	margin-bottom: 40px;
+	padding: 7px 30px;
+	cursor: pointer;
+	text-align: center;
+	color: #376092;
+	border: solid 1px #d9d9d9;
+	background: none;
+	background: #fff;
 }
 
 .form-get-in-touch-with-us button:hover {
-	opacity: 0.5;
+	opacity: .5;
 }
 
 .form-get-in-touch-with-us-wrapper {
@@ -1081,17 +1075,17 @@ img {
 }
 
 .form-get-in-touch-with-us-wrapper .telephone-email a {
-	font-family: "NunitoSans-Regular", sans-serif;
-	color: #376092;
+	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
 	display: flex;
+	color: #376092;
 	align-items: center;
 }
 
 .form-get-in-touch-with-us-wrapper .telephone-email a i {
+	display: inline-block;
 	width: 20px;
 	height: 20px;
-	display: inline-block;
 	margin-right: 15px;
 }
 
