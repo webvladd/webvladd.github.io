@@ -1,10 +1,14 @@
-/*CSS Document*/*/
+/*CSS Document*/
 a:hover {
 	opacity: 0.5;
 }
 
 img {
 	width: 100%;
+}
+
+.hidden {
+	display: none;
 }
 
 /*====== SLIDER ======*/
@@ -799,10 +803,41 @@ img {
 /*============END FORM form-sign-up-now=============*/
 
 /*============FORM form-sign-in-to-tenviz-wrapper===============*/
+.form-sign-in-to-tenviz-section {
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(74, 72, 69, 0.5);
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+}
+
 .form-sign-in-to-tenviz-wrapper {
 	max-width: 475px;
 	border: solid 1px #e7e5e6;
 	box-shadow: 0 0 50px rgba(0,0,0,.1);
+	background-color: #ffffff;
+
+	padding: 25px 85px;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.form-sign-in-to-tenviz-btn-close {
+	width: 30px;
+	height: 30px;
+	background: url(../img/icons/windowclose_104378.svg) no-repeat 50%, 50%;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	background-size: cover;
+	margin-left: 100%;
+}
+
+.form-sign-in-to-tenviz-btn-close:hover {
+	opacity: 0.5;
 }
 
 .form-sign-in-to-tenviz {
