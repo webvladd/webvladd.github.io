@@ -173,6 +173,7 @@ img {
 .landing-page-content .predictive-risk-management-block {
 	background-color: #e6e6e6;
 	box-shadow: 0 20px 20px rgba(0,0,0,.1);
+	height: auto;
 }
 
 .title-block {
@@ -222,11 +223,15 @@ img {
 	margin: 0 auto;
 }
 
+.landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm2 {
+	position: relative;
+}
+
 .landing-page-content .predictive-risk-management-content .prm-content-slider .prm-content-slide-prm2 img {
 	position: absolute;
 	top: 50%;
 	right: 50%;
-	transform: translate(50%, -50%);
+	transform: translate(50%, 50%);
 }
 
 .landing-page-content .alpha-generation-content .ag-content-text,
