@@ -42,6 +42,7 @@ img {
 .landing-page-wrapper {
 	width: 100%;
 	max-width: 1920px;
+	/*min-width: 1920px;*/
 	margin: 0 auto;
 }
 
@@ -59,7 +60,7 @@ img {
 
 	 position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 
 .landing-page-wrapper header a.logo {
@@ -107,7 +108,7 @@ img {
 
 	position: sticky;
 	top: 75px;
-	z-index: -1;
+	/*z-index: -1;*/
 }
 
 .landing-page-content .lp-banner-top .banner-top-text {
@@ -166,6 +167,8 @@ img {
 	padding-left: 60px;
 	align-items: center;
 	background: #ffffff;
+	position: relative;
+	z-index: 1;
 }
 
 /*.landing-page-content .alpha-generation-block {
@@ -691,10 +694,40 @@ img {
 }
 
 /*============FORM form-sign-up-now===============*/
+.form-sign-up-now-section {
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(74, 72, 69, 0.5);
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+}
+
 .form-sign-up-now-wrapper {
 	max-width: 475px;
 	border: solid 1px #e7e5e6;
 	box-shadow: 0 0 50px rgba(0,0,0,.1);
+	background-color: #ffffff;
+
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.form-sign-up-now-btn-close {
+	width: 30px;
+	height: 30px;
+	background: url(../img/icons/windowclose_104378.svg) no-repeat 50%, 50%;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	background-size: cover;
+	margin-left: 100%;
+}
+
+.form-sign-up-now-btn-close:hover {
+	opacity: 0.5;
 }
 
 .form-sign-up-now {
