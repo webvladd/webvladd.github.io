@@ -67,6 +67,7 @@ img {
 	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 28px;
 	color: #fff;
+	margin-right: 50px;
 }
 
 .landing-page-wrapper header nav.lp-header-nav {
@@ -162,8 +163,11 @@ img {
 	box-sizing: border-box;
 	width: 100%;
 	height: calc(100vh - 75px);
-	padding-right: 150px;
-	padding-left: 150px;
+	/*padding-right: 150px;
+	padding-left: 150px;*/
+
+	padding-right: 7.8vw;
+	padding-left: 7.8vw;
 	align-items: center;
 	background: #ffffff;
 	position: relative;
@@ -221,7 +225,7 @@ img {
 }
 
 .landing-page-content .predictive-risk-management-content .prm-content-slider img {
-	width: auto;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -284,7 +288,7 @@ img {
 }
 
 .landing-page-content .credit-monitor-content .cm-content-slider img {
-	width: auto;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -315,6 +319,8 @@ img {
 	padding: 10px;
 	border-radius: 10px;
 	box-shadow: 0 0 10px rgba(0,0,0,.1);
+	margin-right: 5px;
+	margin-left: 5px;
 }
 
 .landing-page-content .solutions-content .solutions-card .solutions-card-title {
