@@ -231,14 +231,14 @@ img {
 
 .landing-page-content .macro-regimes-monitor-content .mrm-content-slider .image-item-block {
 	/*border: solid 1px red;*/
-	padding: 15px;
+	padding: 25px;
 	box-sizing: border-box;
 }
 
 .landing-page-content .macro-regimes-monitor-content .mrm-content-slider .image-item-block img {
-	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.72);
-	-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.72);
-	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.72);
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.72);
+	-moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.72);
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.72);
 }
 
 .landing-page-content .predictive-risk-management-content .prm-content-slider img {
