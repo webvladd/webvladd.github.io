@@ -179,7 +179,8 @@ img {
 }
 
 .landing-page-content .predictive-risk-management-block {
-	background-color: #e6e6e6;
+	/*background-color: #e6e6e6;*/
+	background-color: #f7f7f7;
 	box-shadow: 0 20px 20px rgba(0,0,0,.1);
 	height: auto;
 }
@@ -362,7 +363,8 @@ img {
 }
 
 .landing-page-content .solutions-content .how-it-works,
-.landing-page-content .team-expertise-content .have-questions {
+/*.landing-page-content .team-expertise-content .have-questions {*/
+.landing-page-content .about-us-block .have-questions {
 	display: flex;
 	box-sizing: border-box;
 	width: 100%;
@@ -375,14 +377,16 @@ img {
 }
 
 .landing-page-content .solutions-content .how-it-works .how-it-works-text,
-.landing-page-content .team-expertise-content .have-questions .have-questions-text {
+/*.landing-page-content .team-expertise-content .have-questions .have-questions-text {*/
+.landing-page-content .about-us-block .have-questions .have-questions-text {
 	font-family: 'NunitoSans-Regular', sans-serif;
 	margin-right: 5%;
 	color: #1a6899;
 }
 
 .landing-page-content .solutions-content .how-it-works .how-it-works-text span,
-.landing-page-content .team-expertise-content .have-questions .have-questions-text span {
+/*.landing-page-content .team-expertise-content .have-questions .have-questions-text span {*/
+.landing-page-content .about-us-block .have-questions .have-questions-text span {
 	font-size: 24px;
 }
 
@@ -391,7 +395,8 @@ img {
 }
 
 .landing-page-content .solutions-content .how-it-works a,
-.landing-page-content .team-expertise-content .have-questions a {
+/*.landing-page-content .team-expertise-content .have-questions a {*/
+.landing-page-content .about-us-block .have-questions a {
 	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 24px;
 	display: block;
@@ -403,7 +408,8 @@ img {
 	background-color: #fff;
 }
 .landing-page-content .macro-regimes-monitor-block {
-	background-color: #e6e6e6;
+	/*background-color: #e6e6e6;*/
+	background-color: #f7f7f7;
 }
 
 .macro-regimes-monitor-content .mrm-content-text > p {
@@ -553,11 +559,25 @@ img {
 	opacity: .5;
 }
 
-.landing-page-content .about-us-block,
-.landing-page-content .team-expertise-block {
-	height: 50vh;
+.landing-page-content .about-us-block {
+	height: 60vh;
 }
 
+.landing-page-content .team-expertise-block {
+	height: 40vh;
+}
+
+
+.landing-page-content .about-us-block {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.landing-page-content .about-us-block .title-block,
+.landing-page-content .about-us-block .about-us-content {
+	padding-right: 7.8vw;
+	padding-left: 7.8vw;
+}
 
 .landing-page-content .about-us-block .about-us-content {
 	flex-direction: column;
@@ -651,11 +671,13 @@ img {
 	list-style-type: disc;
 }
 
-.landing-page-content .team-expertise-content .have-questions {
+/*.landing-page-content .team-expertise-content .have-questions {*/
+.landing-page-content .about-us-block .have-questions {
 	margin-top: 0;
 }
 
-.landing-page-content .team-expertise-content .have-questions .have-questions-text {
+/*.landing-page-content .team-expertise-content .have-questions .have-questions-text {*/
+.landing-page-content .about-us-block .have-questions .have-questions-text {
 	margin-right: 20%;
 }
 
