@@ -23,10 +23,33 @@ $(document).on('ready', function() {
 	let $formGetInTouchWithUsBtnClose = $formGetInTouchWithUs.find('.form-get-in-touch-with-us-btn-close');
 	let $formGetInTouchWithUsBtnOpen = $landingPageContainer.find('.form-get-in-touch-with-us-btn-open');
 	//***end form-get-in-touch-with-us***
+
+	//***container-enlarging-img***
+	let $containerEnlargingImg = $landingPageContainer.find('.container-enlarging-img');
+	let $imageEnlargementTtems = $landingPageContainer.find('img.image-enlargement-item');
+	let $blockEnlargingImg = $containerEnlargingImg.find('.block-enlarging-img');
+	//***end container-enlarging-img***
 	//***END DOM ELEMENTS****
 
 	//******EVENT********
-	//***form-sign-up-now***
+	//***container-enlarging-img event***
+	$imageEnlargementTtems.click(function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		$blockEnlargingImg.empty();
+		$blockEnlargingImg.append(`<img src="${e.target.dataset.src}" alt="img">`);
+		$containerEnlargingImg.removeClass('hidden');
+	});
+
+	$blockEnlargingImg.click(function(e) {
+		console.log(e)
+		e.preventDefault();
+		e.stopPropagation();
+		$containerEnlargingImg.addClass('hidden');
+	});
+	//***end container-enlarging-img event***
+
+	//***form-sign-up-now event***
 	$formSignUpNowBtnClose.click(function(e) {
 		$formSignUpNow.addClass('hidden');
 	});
@@ -43,7 +66,7 @@ $(document).on('ready', function() {
 		$formSignUpNow.addClass('hidden');
 		$formSignTenviz.removeClass('hidden');
 	});
-	//***end form-sign-up-now***
+	//***end form-sign-up-now event***
 
 	//***form-sign-in-to-tenviz event***
 	$lpHeaderNavLogin.click(function(e) {
@@ -64,7 +87,7 @@ $(document).on('ready', function() {
 	});
 	//***end form-sign-in-to-tenviz event***
 
-	//***form-get-in-touch-with-us***
+	//***form-get-in-touch-with-us event***
 	$formGetInTouchWithUsBtnClose.click(function(e) {
 		$formGetInTouchWithUs.addClass('hidden');
 	});
@@ -74,7 +97,7 @@ $(document).on('ready', function() {
 		e.stopPropagation();
 		$formGetInTouchWithUs.removeClass('hidden');
 	});
-	//***end form-get-in-touch-with-us***
+	//***end form-get-in-touch-with-us event***
 	//******END EVENT********
 
 	//*****Smooth scrolling to the anchor*****
