@@ -42,7 +42,7 @@ img {
 .landing-page-wrapper {
 	width: 100%;
 	max-width: 1920px;
-	min-width: 1800px;
+	/*min-width: 1800px;*/
 	margin: 0 auto;
 }
 
@@ -100,9 +100,9 @@ img {
 	flex-direction: column;
 	width: 100%;
 	height: calc(100vh - 75px);
-	padding-top: 150px;
-	padding-right: 60px;
-	padding-left: 60px;
+	/*padding-top: 150px;*/
+	padding-top: 8vw;
+	padding-left: 3.1vw;
 	background: url(../img/Notebook2.jpg) no-repeat;
 	background-size: cover;
 	position: sticky;
@@ -159,7 +159,7 @@ img {
 	flex-direction: column;
 	box-sizing: border-box;
 	width: 100%;
-	height: calc(100vh - 75px);
+	/*height: calc(100vh - 75px);*/
 	padding-right: 7.8vw;
 	padding-left: 7.8vw;
 	align-items: center;
@@ -429,7 +429,7 @@ img {
 }
 
 .landing-page-content .insights-videos-block {
-	height: 60vh;
+	/*height: 60vh;*/
 }
 
 .landing-page-content .blog-block {
@@ -544,11 +544,11 @@ img {
 }
 
 .landing-page-content .about-us-block {
-	height: 60vh;
+	/*height: 60vh;*/
 }
 
 .landing-page-content .team-expertise-block {
-	height: 40vh;
+	/*height: 40vh;*/
 }
 
 .landing-page-content .about-us-block {
