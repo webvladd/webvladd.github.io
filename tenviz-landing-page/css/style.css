@@ -808,6 +808,13 @@ img {
 	text-align: center;
 }
 
+.form-sign-up-now .form-title span {
+	display: block;
+	margin-bottom: 15px;
+	font-size: 20px;
+}
+
+
 .form-sign-up-now .form-title a {
 	font-family: 'NunitoSans-Italic', sans-serif;
 	margin-left: 5px;
@@ -951,6 +958,12 @@ img {
 	text-align: center;
 }
 
+.form-sign-in-to-tenviz .form-title span {
+	display: block;
+	margin-bottom: 15px;
+	font-size: 20px;
+}
+
 .form-sign-in-to-tenviz .form-title a {
 	font-family: 'NunitoSans-Italic', sans-serif;
 	margin-left: 5px;
@@ -1048,6 +1061,9 @@ img {
 
 .form-contact-us .form-title span {
 	font-family: 'NunitoSans-Italic', sans-serif;
+	margin-bottom: 15px;
+	display: block;
+	font-size: 20px;
 }
 
 .form-contact-us input {
@@ -1190,6 +1206,9 @@ img {
 
 .form-get-in-touch-with-us .form-title span {
 	font-family: 'NunitoSans-Italic', sans-serif;
+	margin-bottom: 15px;
+	display: block;
+	font-size: 20px;
 }
 
 .form-get-in-touch-with-us input {
