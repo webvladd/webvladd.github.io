@@ -115,15 +115,19 @@ img {
 }
 
 .landing-page-content .lp-banner-top .banner-top-text h1 {
-	font-size: 46px;
+	/*font-size: 46px;*/
+	font-size: 2.5vw;
 	width: 100%;
 	max-width: 800px;
-	margin-top: 80px;
-	margin-bottom: 35px;
+	/*margin-top: 80px;*/
+	margin-top: 5.5vw;
+	/*margin-bottom: 35px;*/
+	margin-bottom: 2.5vw;
 }
 
 .landing-page-content .lp-banner-top .banner-top-text h2 {
-	font-size: 36px;
+	/*font-size: 36px;*/
+	font-size: 2vw;
 	width: 100%;
 	max-width: 800px;
 }
@@ -166,6 +170,8 @@ img {
 	background: #ffffff;
 	position: relative;
 	z-index: 1;
+	/*padding-bottom: 50px;*/
+	padding-bottom: 3.6vw;
 }
 
 .landing-page-content .predictive-risk-management-block {
@@ -175,7 +181,8 @@ img {
 
 .title-block {
 	box-sizing: border-box;
-	padding-top: 50px;
+	/*padding-top: 50px;*/
+	padding-top: 3.6vw;
 }
 
 .title-block h3 {
@@ -206,6 +213,7 @@ img {
 	align-items: center;
 	flex-grow: 1;
 	justify-content: space-between;
+	margin-top: 30px;
 }
 
 .landing-page-content .alpha-generation-content .ag-content-slider,
@@ -350,7 +358,8 @@ img {
 	display: flex;
 	box-sizing: border-box;
 	width: 100%;
-	margin-top: 175px;
+	/*margin-top: 175px;*/
+	margin-top: 50px;
 	padding: 10px 15px;
 	border: solid 1px #cbd4dd;
 	background-color: #eaf3fa;
@@ -560,6 +569,10 @@ img {
 .landing-page-content .about-us-block .about-us-content {
 	padding-right: 7.8vw;
 	padding-left: 7.8vw;
+}
+
+.landing-page-content .about-us-block .about-us-content {
+	margin-bottom: 30px;
 }
 
 .landing-page-content .about-us-block .about-us-content {
