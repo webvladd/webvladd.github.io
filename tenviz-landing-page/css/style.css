@@ -214,7 +214,7 @@ img {
 	align-items: center;
 	flex-grow: 1;
 	justify-content: space-between;
-	margin-top: 30px;
+	/*margin-top: 30px;*/
 }
 
 .landing-page-content .alpha-generation-content .ag-content-slider,
@@ -488,18 +488,18 @@ img {
 
 .landing-page-content .blog-block .blog-content .blog-content-center span {
 	font-family: 'NunitoSans-Bold', sans-serif;
-	font-size: 14px;
-	text-decoration: underline;
-	color: #1758b4;
+	font-size: 20px;
+	/*text-decoration: underline;
+	color: #1758b4;*/
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-center p {
 	font-family: 'NunitoSans-Regular', sans-serif;
-	font-size: 14px;
+	font-size: 20px;
 	margin-top: 5px;
 	margin-bottom: 34px;
-	text-decoration: underline;
-	color: #1758b4;
+	/*text-decoration: underline;
+	color: #1758b4;*/
 }
 
 .landing-page-content .blog-block .blog-content .blog-content-center a {
