@@ -118,7 +118,8 @@ img {
 	/*font-size: 46px;*/
 	font-size: 2.5vw;
 	width: 100%;
-	max-width: 800px;
+	/*max-width: 800px;*/
+	max-width: 44vw;
 	/*margin-top: 80px;*/
 	margin-top: 5.5vw;
 	/*margin-bottom: 35px;*/
