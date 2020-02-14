@@ -231,6 +231,10 @@ img {
 	box-sizing: border-box;
 }
 
+.landing-page-content .credit-monitor-content .cm-content-slider .image-item-block.cm-content-slide-cm2 {
+	transform: translateY(20%);
+}
+
 .landing-page-content .macro-regimes-monitor-content .mrm-content-slider .image-item-block img,
 .landing-page-content .alpha-generation-content .ag-content-slider .image-item-block img,
 .landing-page-content .predictive-risk-management-content .prm-content-slider .image-item-block img,
