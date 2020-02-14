@@ -613,6 +613,10 @@ img {
 	width: 138px;
 }*/
 
+.landing-page-content .about-us-block .about-us-content .about-us-person {
+	margin-right: 20px;
+}
+
 .landing-page-content .about-us-block .about-us-content .about-us-person .about-us-person-image {
 	position: relative;
 }
