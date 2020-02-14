@@ -724,6 +724,7 @@ img {
 .landing-page-wrapper footer .copyright {
 	font-family: 'NunitoSans-Regular', sans-serif;
 	font-size: 12px;
+	width: 310px;
 }
 
 .landing-page-wrapper footer .copyright a {
@@ -764,6 +765,8 @@ img {
 
 .landing-page-wrapper footer .social-networks {
 	display: flex;
+	width: 310px;
+	justify-content: flex-end;
 }
 
 .landing-page-wrapper footer .social-networks a {
