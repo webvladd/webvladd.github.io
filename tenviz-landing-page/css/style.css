@@ -609,8 +609,19 @@ img {
 	justify-content: center;
 }
 
-.landing-page-content .about-us-block .about-us-content .about-us-person {
+/*.landing-page-content .about-us-block .about-us-content .about-us-person {
 	width: 138px;
+}*/
+
+.landing-page-content .about-us-block .about-us-content .about-us-person .about-us-person-image {
+	position: relative;
+}
+
+.landing-page-content .about-us-block .about-us-content .about-us-person .about-us-person-image a {
+	position: absolute;
+	width: 40px;
+	bottom: 0;
+	right: 0;
 }
 
 .landing-page-content .about-us-block .about-us-content .about-us-person span {
@@ -717,7 +728,7 @@ img {
 
 .landing-page-wrapper footer .telephone-email {
 	display: flex;
-	flex-direction: column;
+	/*flex-direction: column;*/
 }
 
 .landing-page-wrapper footer .telephone-email a {
@@ -726,6 +737,8 @@ img {
 	display: flex;
 	color: #376092;
 	align-items: center;
+	margin-right: 10px;
+	margin-left: 10px;
 }
 
 .landing-page-wrapper footer .telephone-email a i {
