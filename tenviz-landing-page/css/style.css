@@ -305,7 +305,7 @@ img {
 	width: 100%;
 	margin: 0 auto;
 }
-
+************************
 .landing-page-content .solutions-block {
 	padding-left: 0px;
 	padding-right: 0px;
@@ -411,6 +411,8 @@ img {
 	background-color: #fff;
 }
 
+**************************
+
 .landing-page-content .macro-regimes-monitor-block {
 	background-color: #f7f7f7;
 }
@@ -452,6 +454,7 @@ img {
 .macro-regimes-monitor-content .mrm-content-text ul li > span {
 	margin-right: 10px;
 }
+********************
 
 .landing-page-content .insights-videos-block {
 	/*height: 60vh;*/
