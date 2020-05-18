@@ -1,6 +1,7 @@
 "use strict";
 
 (function () {
+  console.log("TEST");
   var width,
       height,
       largeHeader,
@@ -80,7 +81,8 @@
 
 
     for (var i in points) {
-      var c = new Circle(points[i], 2 + Math.random() * 2, 'rgba(255,255,255,0.3)');
+      var c = new Circle(points[i], 2 + Math.random() * 2, 'rgba(255,255,255,0.3)'); // var c = new Circle(points[i], 2+Math.random()*2, 'rgba(245,0,32,1)');
+
       points[i].circle = c;
     }
   } // Event handling
@@ -96,7 +98,6 @@
   }
 
   function mouseMove(e) {
-    // var posx = posy = 0;
     var posx = 0;
     var posy = 0;
 
@@ -180,7 +181,8 @@
       ctx.beginPath();
       ctx.moveTo(p.x, p.y);
       ctx.lineTo(p.closest[i].x, p.closest[i].y);
-      ctx.strokeStyle = 'rgba(156,217,249,' + p.active + ')';
+      ctx.strokeStyle = 'rgba(156,217,249,' + p.active + ')'; // ctx.strokeStyle = 'rgba(245,0,32,'+ p.active+')';
+
       ctx.stroke();
     }
   }
@@ -199,7 +201,8 @@
       if (!_this.active) return;
       ctx.beginPath();
       ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
-      ctx.fillStyle = 'rgba(156,217,249,' + _this.active + ')';
+      ctx.fillStyle = 'rgba(156,217,249,' + _this.active + ')'; // ctx.fillStyle = 'rgba(26,245,0,'+ _this.active+')';
+
       ctx.fill();
     };
   } // Util
